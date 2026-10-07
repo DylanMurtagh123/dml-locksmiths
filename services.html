@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Locksmith Services Ipswich | Lock Fitting, Repairs & Emergency Callouts | DML Locksmiths</title>
+  <meta name="description" content="Full locksmith services in Ipswich & Suffolk — emergency lockouts, lock fitting, lock repairs, door/window adjustments and key cutting. No call-out fee. Call DML Locksmiths on 01473 875026."/>
+  <meta name="keywords" content="locksmith services Ipswich, emergency lockout Ipswich, lock fitting Ipswich, lock repair Ipswich, key cutting Ipswich, door adjustment Ipswich, window adjustment Suffolk, locksmith near me Ipswich"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Locksmith Services Ipswich | DML Locksmiths"/>
+  <meta property="og:description" content="Emergency lockouts, lock fitting, repairs, key cutting & door/window adjustments across Ipswich & Suffolk. No call-out fee. Call 01473 875026."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://www.dml-locksmiths.co.uk/services.html"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocksmithService",
+    "name": "DML Locksmiths",
+    "url": "https://www.dml-locksmiths.co.uk",
+    "telephone": "01473875026",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ipswich",
+      "addressRegion": "Suffolk",
+      "addressCountry": "GB"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Locksmith Services Ipswich",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Lockout Ipswich", "description": "Fast emergency locksmith response across Ipswich and Suffolk for lost keys and lockouts." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lock Fitting Ipswich", "description": "Supply and fitting of new locks for homes and businesses in Ipswich." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lock Repair Ipswich", "description": "Diagnosis and repair of stiff, broken or faulty locks across Ipswich and Suffolk." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Door and Window Adjustment Ipswich", "description": "Hinge adjustment, frame realignment and lock alignment for doors and windows in Ipswich." } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Key Cutting Ipswich", "description": "Precision key cutting for residential properties across Ipswich and Suffolk." } }
+      ]
+    }
+  }
+
+</script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --gold: #c9a227;
+      --gold-light: #f0c84a;
+      --gold-dark: #9b7a14;
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --white: #ffffff;
+      --text-muted: #aaa;
+      --radius: 4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.15;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── UTILITY ─── */
+    .gold { color: var(--gold); }
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+      font-weight: 700;
+    }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,162,39,0.35); }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      border: 2px solid var(--gold);
+      font-weight: 600;
+    }
+    .btn-outline:hover { background: var(--gold); color: var(--black); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    section { padding: 5rem 1.5rem; }
+    .gold-divider {
+      width: 48px; height: 3px;
+      background: var(--gold);
+      margin: 1rem 0 1.5rem;
+    }
+
+    /* ─── SCROLL REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.55s ease, transform 0.55s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .stagger-1 { transition-delay: 0.05s; }
+    .stagger-2 { transition-delay: 0.15s; }
+    .stagger-3 { transition-delay: 0.25s; }
+
+            /* ─── TOPBAR + NAV STICKY WRAPPER ─── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      background: var(--black);
+      border-bottom: 1px solid rgba(201,162,39,0.15);
+      padding: 0;
+    }
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 44px;
+      gap: 1rem;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 1.5rem; }
+    .topbar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      white-space: nowrap;
+    }
+    .topbar-item svg { color: var(--gold); flex-shrink: 0; }
+    .topbar-item a { color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .topbar-item a:hover { color: var(--gold); }
+    .topbar-right { display: flex; align-items: center; }
+    .topbar-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0 1.25rem;
+      height: 44px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .topbar-cta:hover { background: var(--gold-light); }
+    .topbar-cta svg { flex-shrink: 0; }
+
+    /* ─── NAV ─── */
+    nav {
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,162,39,0.2);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      gap: 1.5rem;
+    }
+    .nav-logo img { height: 52px; width: auto; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-phone {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      text-align: right;
+    }
+    .nav-phone span { font-size: 0.65rem; display: block; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase; }
+
+    /* ─── HAMBURGER ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      z-index: 201;
+      position: relative;
+    }
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+      pointer-events: none;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── MOBILE MENU ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,10,10,0.98);
+      z-index: 300;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 2rem;
+    }
+    .mobile-menu-links a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      padding: 0.75rem 0;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .mobile-menu-links a:last-child { border-bottom: none; }
+    .mobile-menu-links a:hover, .mobile-menu-links a.active { color: var(--gold); }
+    .mobile-menu-cta { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 320px; }
+    .mobile-call-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      background: var(--gold); color: var(--black);
+      font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem;
+      border-radius: var(--radius); transition: background 0.2s;
+      text-decoration: none;
+    }
+    .mobile-call-btn:hover { background: var(--gold-light); }
+    .mobile-wa-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      background: #25D366; color: #fff;
+      font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem;
+      border-radius: var(--radius); transition: background 0.2s;
+      text-decoration: none;
+    }
+    .mobile-wa-btn:hover { background: #1da851; }
+    .mobile-menu-close {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      width: 44px; height: 44px; background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); transition: background 0.2s;
+    }
+    .mobile-menu-close:hover { background: rgba(255,255,255,0.18); }
+
+    @media (max-width: 900px) {
+      .topbar-left .topbar-item:not(:first-child) { display: none; }
+      .nav-links { display: none; }
+      .nav-phone { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 480px) {
+      .topbar-cta span { display: none; }
+    }
+
+/* ─── PAGE HERO ─── */
+    .page-hero {
+      position: relative;
+      padding: 7rem 1.5rem 5rem;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('image6.jpg') center/cover no-repeat;
+      filter: brightness(0.15) saturate(0.3);
+    }
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(10,10,10,0.95) 55%, rgba(10,10,10,0.5) 100%);
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .breadcrumb a { color: var(--gold); }
+    .breadcrumb span { color: rgba(255,255,255,0.3); }
+    .page-hero h1 { font-size: clamp(2.2rem, 5vw, 4rem); margin-bottom: 1rem; animation: fadeInUp 0.7s ease both; }
+    .page-hero p { font-size: 1.05rem; color: rgba(255,255,255,0.75); max-width: 560px; margin-bottom: 2rem; animation: fadeInUp 0.7s 0.1s ease both; }
+    .page-hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; animation: fadeInUp 0.7s 0.2s ease both; }
+    .hero-phone-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+    }
+    .hero-phone-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,162,39,0.4); }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── SERVICES NAV PILLS ─── */
+    .services-nav {
+      background: var(--dark);
+      border-bottom: 1px solid rgba(201,162,39,0.15);
+      position: sticky;
+      top: 114px;
+      z-index: 90;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .services-nav::-webkit-scrollbar { display: none; }
+    .services-nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      gap: 0;
+    }
+    .services-nav-inner a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      padding: 1rem 1.25rem;
+      white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .services-nav-inner a:hover { color: var(--white); }
+    .services-nav-inner a.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ─── SERVICE SECTIONS ─── */
+    .service-section {
+      padding: 6rem 1.5rem;
+    }
+    .service-section:nth-child(even) { background: var(--dark); }
+    .service-section:nth-child(odd) { background: var(--black); }
+
+    .service-layout {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .service-layout.reverse { direction: rtl; }
+    .service-layout.reverse > * { direction: ltr; }
+
+    .service-image-wrap {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .service-image-wrap img {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    .service-image-wrap:hover img { transform: scale(1.04); }
+    .service-image-wrap::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border: 2px solid rgba(201,162,39,0.2);
+      border-radius: 4px;
+      pointer-events: none;
+    }
+    .service-number {
+      position: absolute;
+      top: -1rem;
+      right: -1rem;
+      width: 64px; height: 64px;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      border: 3px solid var(--black);
+      z-index: 2;
+    }
+    .service-text h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 0.5rem; }
+    .service-text .service-tagline {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1.25rem;
+    }
+    .service-text p { color: var(--text-muted); margin-bottom: 1rem; font-size: 0.95rem; line-height: 1.8; }
+    .service-features {
+      list-style: none;
+      margin: 1.5rem 0 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .service-features li {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.88rem;
+      color: rgba(255,255,255,0.8);
+    }
+    .service-features li svg { color: var(--gold); flex-shrink: 0; }
+    .service-actions { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+
+    /* ─── INLINE CTA BANNER ─── */
+    .cta-banner {
+      background: var(--gold);
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+    }
+    .cta-banner h2 { color: var(--black); font-size: clamp(1.5rem, 4vw, 2.4rem); margin-bottom: 0.75rem; }
+    .cta-banner p { color: rgba(0,0,0,0.65); max-width: 480px; margin: 0 auto 1.75rem; font-size: 0.95rem; }
+    .cta-banner-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .cta-dark-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--black);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+    }
+    .cta-dark-btn:hover { background: var(--dark2); transform: translateY(-2px); }
+    .cta-outline-dark {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: var(--black);
+      border: 2px solid var(--black);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+    }
+    .cta-outline-dark:hover { background: var(--black); color: var(--gold); }
+
+    /* ─── TRUST STRIP ─── */
+    .trust-strip {
+      background: var(--dark2);
+      border-top: 1px solid rgba(201,162,39,0.15);
+      border-bottom: 1px solid rgba(201,162,39,0.15);
+      padding: 2rem 1.5rem;
+    }
+    .trust-strip-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+    }
+    .trust-item svg { color: var(--gold); flex-shrink: 0; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,162,39,0.15);
+      padding: 3rem 1.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .footer-logo img { height: 60px; margin-bottom: 1rem; }
+    .footer-logo p { font-size: 0.82rem; color: var(--text-muted); max-width: 280px; }
+    .footer-col h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { font-size: 0.85rem; color: var(--text-muted); padding: 0.25rem 0; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* ─── WHATSAPP ─── */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 999;
+      width: 60px; height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      animation: waBob 2.8s ease-in-out infinite, waGlow 2.8s ease-in-out infinite;
+      transition: width 0.3s ease, border-radius 0.3s ease, background 0.2s;
+      overflow: hidden;
+    }
+    .whatsapp-btn:hover { width: 210px; border-radius: 30px; background: #1da851; animation: waGlow 2.8s ease-in-out infinite; }
+    .whatsapp-btn svg { flex-shrink: 0; }
+    .whatsapp-label {
+      white-space: nowrap;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      max-width: 0; overflow: hidden; opacity: 0;
+      transition: max-width 0.3s ease, opacity 0.25s ease, margin 0.3s ease;
+      margin-left: 0;
+    }
+    .whatsapp-btn:hover .whatsapp-label { max-width: 160px; opacity: 1; margin-left: 8px; }
+    @keyframes waBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+    @keyframes waGlow {
+      0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.45),0 0 0 0 rgba(37,211,102,0.35)}
+      50%{box-shadow:0 6px 28px rgba(37,211,102,0.65),0 0 0 12px rgba(37,211,102,0)}
+    }
+
+    /* ─── MOBILE ─── */
+    @media (max-width: 900px) {
+      .service-layout, .service-layout.reverse { grid-template-columns: 1fr; direction: ltr; gap: 2.5rem; }
+      .service-image-wrap img { height: 280px; }
+      .nav-links { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 480px) {
+      .whatsapp-btn { bottom: 20px; right: 18px; width: 54px; height: 54px; }
+      .whatsapp-btn:hover { width: 54px; border-radius: 50%; }
+      .whatsapp-label { display: none; }
+    }
+
+    /* ─── MOBILE TRUST STRIP ALIGNMENT FIX ─── */
+    @media (max-width: 700px) {
+      .trust-strip {
+        padding: 1.75rem 1.5rem;
+      }
+
+      .trust-strip-inner {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1.15rem;
+        justify-content: start;
+        align-items: start;
+      }
+
+      .trust-item {
+        width: 100%;
+        justify-content: flex-start;
+        text-align: left;
+        gap: 0.75rem;
+      }
+    }
+
+    @media (min-width: 701px) and (max-width: 900px) {
+      .trust-strip-inner {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1.25rem 2rem;
+      }
+
+      .trust-item {
+        justify-content: flex-start;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="site-header">
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <div class="topbar-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Available 7 Days a Week
+      </div>
+      <div class="topbar-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ipswich &amp; Suffolk
+      </div>
+      <div class="topbar-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        No Call-Out Fee
+      </div>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:01473875026" class="topbar-cta">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+        <span>Call 01473 875026</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="DML Locksmiths Ipswich logo"/></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div class="nav-phone">
+      <span>Call Sean Now</span>
+      01473 875026
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <div class="mobile-menu-links">
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="blog.html">Blog</a>
+  </div>
+  <div class="mobile-menu-cta">
+    <a href="tel:01473875026" class="mobile-call-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg> Call 01473 875026</a>
+    <a href="https://wa.me/447591773419?text=Hi%20Sean%2C%20I%20found%20you%20on%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20your%20locksmith%20services.%20Could%20you%20help%20me%20please%3F" target="_blank" rel="noopener noreferrer" class="mobile-wa-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20"><path fill="#fff" d="M4.9 43.3l2.7-9.7C5.6 30.7 4.5 27.4 4.5 24 4.5 13.2 13.2 4.5 24 4.5S43.5 13.2 43.5 24 34.8 43.5 24 43.5c-3.3 0-6.4-.9-9.1-2.4L4.9 43.3z"/><path fill="#25D366" d="M24 7.5C14.8 7.5 7.5 14.8 7.5 24c0 3.2.9 6.2 2.5 8.8L7.4 41l8.4-2.6c2.5 1.4 5.3 2.1 8.2 2.1 9.2 0 16.5-7.3 16.5-16.5S33.2 7.5 24 7.5z"/><path fill="#fff" d="M33.3 28.5c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2-.3.5-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-2.6-1.3-4.3-2.3-6-5.2-.5-.8.5-.7 1.3-2.4.1-.3.1-.5-.1-.7-.2-.2-1-2.5-1.4-3.4-.4-.9-.7-.8-1-.8h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 2.6 1.1 3.6 1.2 4.9 1 .8-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.1-.4-.2-.9-.4z"/></svg> WhatsApp Sean</a>
+  </div>
+</div>
+
+</div>
+<!-- END SITE HEADER -->
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span style="color:var(--white);">Services</span>
+    </div>
+    <h1>Locksmith <em class="gold">Services</em><br/>in Ipswich</h1>
+    <p>From emergency lockouts to full security upgrades — Sean at DML Locksmiths covers everything you need, with no call-out fee and an honest price every time.</p>
+    <div class="page-hero-actions">
+      <a href="tel:01473875026" class="hero-phone-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+        Call 01473 875026
+      </a>
+      <a href="index.html#contact" class="btn btn-outline">Send a Message</a>
+    </div>
+  </div>
+</header>
+
+<!-- SERVICES NAV PILLS -->
+<div class="services-nav">
+  <div class="services-nav-inner">
+    <a href="#emergency" class="active">Emergency Lockouts</a>
+    <a href="#fitting">Lock Fitting</a>
+    <a href="#repairs">Lock Repairs</a>
+    <a href="#adjustments">Door/Window Adjustments</a>
+    <a href="#keycutting">Key Cutting</a>
+  </div>
+</div>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      No Call-Out Fee
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      UK Locksmiths Association Member
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Fully Insured & DBS Checked
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      7 Days a Week
+    </div>
+    <div class="trust-item">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      Covering Ipswich & Suffolk
+    </div>
+  </div>
+</div>
+
+<!-- ─── SERVICE 1: EMERGENCY ─── -->
+<section class="service-section" id="emergency">
+  <div class="service-layout">
+    <div class="service-image-wrap reveal-left">
+      <div class="service-number">01</div>
+      <img src="image5.jpg" alt="Emergency locksmith Ipswich - lock close up showing keyhole"/>
+    </div>
+    <div class="service-text reveal-right">
+      <p class="service-tagline">Available 7 Days a Week</p>
+      <h2>Emergency Locksmith <em class="gold">Ipswich</em></h2>
+      <div class="gold-divider"></div>
+      <p>Being locked out of your home is stressful — especially late at night or in bad weather. Sean provides a rapid emergency response across Ipswich and the surrounding Suffolk area, getting you back inside as quickly and calmly as possible.</p>
+      <p>Whether you've lost your keys, snapped a key in the lock, or simply shut the door behind you, Sean will arrive promptly and use professional, non-destructive techniques to gain entry with minimal fuss and no unnecessary damage.</p>
+      <ul class="service-features">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Fast response across Ipswich — typically within 30 minutes
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Non-destructive entry wherever possible
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Lost keys, locked out, snapped keys in lock
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Upfront pricing before any work begins — no surprises
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Available 7 days a week including weekends
+        </li>
+      </ul>
+      <div class="service-actions">
+        <a href="tel:01473875026" class="btn btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+          Call Now — 01473 875026
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MID CTA BANNER ─── -->
+<div class="cta-banner">
+  <div class="container" style="padding:0;">
+    <h2>Locked Out Right Now?</h2>
+    <p>Don't wait — call Sean directly and he'll be on his way. No call-out fee, no hidden costs.</p>
+    <div class="cta-banner-actions">
+      <a href="tel:01473875026" class="cta-dark-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+        Call 01473 875026
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ─── SERVICE 2: LOCK FITTING ─── -->
+<section class="service-section" id="fitting">
+  <div class="service-layout reverse">
+    <div class="service-image-wrap reveal-right">
+      <div class="service-number">02</div>
+      <img src="image3.jpg" alt="Lock fitting service Ipswich Suffolk - locksmith installing new lock on door"/>
+    </div>
+    <div class="service-text reveal-left">
+      <p class="service-tagline">New Builds, Move-Ins & Upgrades</p>
+      <h2>Lock Fitting <em class="gold">in Ipswich</em></h2>
+      <div class="gold-divider"></div>
+      <p>Whether you're moving into a new home, want to upgrade your existing locks, or need to replace locks following a break-in, Sean will supply and fit the right lock for your door — first time, every time.</p>
+      <p>Sean can advise on the best lock type for your property, whether that's a standard cylinder replacement, a high-security anti-snap lock, or a multi-point locking mechanism for uPVC doors. All locks are fitted to the highest standard.</p>
+      <ul class="service-features">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Standard and high-security cylinder fitting
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Anti-snap, anti-pick and anti-drill options available
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          uPVC multi-point lock replacement
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Ideal for new tenants, landlords and homeowners
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Honest advice on the best lock for your budget
+        </li>
+      </ul>
+      <div class="service-actions">
+        <a href="tel:01473875026" class="btn btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+          Call for a Quote
+        </a>
+        <a href="index.html#contact" class="btn btn-outline">Send a Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICE 3: LOCK REPAIRS ─── -->
+<section class="service-section" id="repairs">
+  <div class="service-layout">
+    <div class="service-image-wrap reveal-left">
+      <div class="service-number">03</div>
+      <img src="image7.jpg" alt="Lock repair service Ipswich - locksmith repairing door lock mechanism"/>
+    </div>
+    <div class="service-text reveal-right">
+      <p class="service-tagline">Diagnose First, Replace Only If Needed</p>
+      <h2>Lock Repairs <em class="gold">Ipswich</em></h2>
+      <div class="gold-divider"></div>
+      <p>A stiff, sticky or misfiring lock doesn't always need replacing — and Sean will always try to repair before recommending a replacement. This honest approach saves you money and often gets the job done in a single visit.</p>
+      <p>From worn mechanisms and broken cylinders to locks that simply won't turn or latch properly, Sean has the tools and experience to diagnose the problem quickly and get your lock working as it should across Ipswich and Suffolk.</p>
+      <ul class="service-features">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Stiff, sticking or seized locks
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Broken or worn lock mechanisms
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Keys turning but lock not engaging
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Repair first — replace only when necessary
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Transparent diagnosis and pricing before work starts
+        </li>
+      </ul>
+      <div class="service-actions">
+        <a href="tel:01473875026" class="btn btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+          Call 01473 875026
+        </a>
+        <a href="index.html#contact" class="btn btn-outline">Send a Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICE 4: DOOR/WINDOW ADJUSTMENTS ─── -->
+<section class="service-section" id="adjustments">
+  <div class="service-layout reverse">
+    <div class="service-image-wrap reveal-right">
+      <div class="service-number">04</div>
+      <img src="door_adjustment.jpg" alt="Door and window adjustment service Ipswich Suffolk - misaligned door showing hinge adjustment needed"/>
+    </div>
+    <div class="service-text reveal-left">
+      <p class="service-tagline">Doors & Windows — Aligned & Secure</p>
+      <h2>Door/Window Adjustments <em class="gold">Ipswich</em></h2>
+      <div class="gold-divider"></div>
+      <p>A door or window that doesn't close, latch or lock properly isn't just annoying — it's a security risk. Over time, frames shift, hinges wear and mechanisms fall out of alignment, particularly in older properties or after seasonal changes.</p>
+      <p>Sean can assess and correct the alignment of both doors and windows across Ipswich and Suffolk, adjusting hinges, strike plates and locking points so everything closes and locks as it should — keeping your home secure.</p>
+      <ul class="service-features">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Doors and windows that won't close or latch properly
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Hinge adjustment and replacement
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Strike plate realignment
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          uPVC door and window mechanism adjustment
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Draught, rattling and stiff opening issues resolved
+        </li>
+      </ul>
+      <div class="service-actions">
+        <a href="tel:01473875026" class="btn btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+          Call for a Quote
+        </a>
+        <a href="index.html#contact" class="btn btn-outline">Send a Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SERVICE 5: KEY CUTTING ─── -->
+<section class="service-section" id="keycutting">
+  <div class="service-layout">
+    <div class="service-image-wrap reveal-left">
+      <div class="service-number">05</div>
+      <img src="image1.jpg" alt="Key cutting service Ipswich Suffolk - key and lock cylinder"/>
+    </div>
+    <div class="service-text reveal-right">
+      <p class="service-tagline">Spare Keys Cut Accurately</p>
+      <h2>Key Cutting <em class="gold">Ipswich</em></h2>
+      <div class="gold-divider"></div>
+      <p>Need a spare set of keys cut for a family member, cleaner or letting agent? Sean provides accurate key cutting for all standard residential key types across Ipswich and the surrounding area.</p>
+      <p>Getting a spare key cut is a small job but an important one — a poorly cut key can damage your lock over time. Sean takes care to cut every key accurately so it works smoothly first time, every time.</p>
+      <ul class="service-features">
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Spare keys for family, friends or letting agents
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          All standard residential key types
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Precision cut to avoid lock damage
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Ideal for landlords with multiple properties
+        </li>
+        <li>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Quick turnaround — call ahead to arrange
+        </li>
+      </ul>
+      <div class="service-actions">
+        <a href="tel:01473875026" class="btn btn-gold">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+          Call 01473 875026
+        </a>
+        <a href="index.html#contact" class="btn btn-outline">Send a Message</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section style="background: var(--gold); padding: 5rem 1.5rem; text-align: center;">
+  <div class="container" style="padding: 0;">
+    <p style="font-family:'Oswald',sans-serif; font-size:0.75rem; letter-spacing:0.25em; text-transform:uppercase; color:rgba(0,0,0,0.55); margin-bottom:0.75rem;">Ready to Get Started?</p>
+    <h2 style="color: var(--black); font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1rem;">Need a Locksmith in Ipswich?</h2>
+    <p style="color: rgba(0,0,0,0.65); max-width: 500px; margin: 0 auto 2rem; font-size: 1rem;">Call Sean today for a fast, friendly and honest service. No call-out fee — you only pay for the work done.</p>
+    <div style="display:flex; flex-wrap:wrap; gap:1rem; justify-content:center;">
+      <a href="tel:01473875026" class="cta-dark-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+        Call 01473 875026
+      </a>
+      <a href="index.html#contact" class="cta-outline-dark">Send a Message</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="logo.jpg" alt="DML Locksmiths Ipswich"/>
+      <p>Your trusted local locksmith in Ipswich and surrounding Suffolk areas. Vetted, insured and always professional.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#emergency">Emergency Call Outs</a></li>
+        <li><a href="#fitting">Fitting New Locks</a></li>
+        <li><a href="#repairs">Repairing Locks</a></li>
+        <li><a href="#adjustments">Door/Window Adjustments</a></li>
+        <li><a href="#keycutting">Key Cutting</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Areas</h4>
+      <ul>
+        <li><a href="locksmith-ipswich.html">Ipswich</a></li>
+        <li><a href="locksmith-felixstowe.html">Felixstowe</a></li>
+        <li><a href="locksmith-woodbridge.html">Woodbridge</a></li>
+        <li><a href="locksmith-stowmarket.html">Stowmarket</a></li>
+        <li><a href="locksmith-kesgrave.html">Kesgrave</a></li>
+        <li><a href="locksmith-martlesham.html">Martlesham</a></li>
+        <li><a href="locksmith-claydon.html">Claydon</a></li>
+        <li><a href="locksmith-bramford.html">Bramford</a></li>
+        <li><a href="locksmith-hadleigh.html">Hadleigh</a></li>
+        <li><a href="locksmith-needham-market.html">Needham Market</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:01473875026">01473 875026</a></li>
+        <li>Ipswich, Suffolk</li>
+        <li>7 Days a Week</li>
+        <li style="margin-top:0.75rem;">
+          <img src="locksmithassociation.jpg" alt="UK Locksmiths Association" style="width:60px; border-radius:4px;"/>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 DML Locksmiths. All rights reserved.</span>
+    <span>Ipswich, Suffolk</span>
+  </div>
+  
+  <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.4);">
+  <a href="privacy-policy.html" style="color: #c9a227; text-decoration: none;">Privacy Policy</a>
+  <span style="margin: 0 0.6rem; color: rgba(255,255,255,0.3);">|</span>
+  <a href="terms-and-conditions.html" style="color: #c9a227; text-decoration: none;">Terms &amp; Conditions</a>
+</div>
+  
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/447591773419?text=Hi%20Sean%2C%20I%20found%20you%20on%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20your%20locksmith%20services.%20Could%20you%20help%20me%20please%3F" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Chat with Sean on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30" height="30">
+    <path fill="#fff" d="M4.9 43.3l2.7-9.7C5.6 30.7 4.5 27.4 4.5 24 4.5 13.2 13.2 4.5 24 4.5S43.5 13.2 43.5 24 34.8 43.5 24 43.5c-3.3 0-6.4-.9-9.1-2.4L4.9 43.3z"/>
+    <path fill="#25D366" d="M24 7.5C14.8 7.5 7.5 14.8 7.5 24c0 3.2.9 6.2 2.5 8.8L7.4 41l8.4-2.6c2.5 1.4 5.3 2.1 8.2 2.1 9.2 0 16.5-7.3 16.5-16.5S33.2 7.5 24 7.5z"/>
+    <path fill="#fff" d="M33.3 28.5c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2-.3.5-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-2.6-1.3-4.3-2.3-6-5.2-.5-.8.5-.7 1.3-2.4.1-.3.1-.5-.1-.7-.2-.2-1-2.5-1.4-3.4-.4-.9-.7-.8-1-.8h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 2.6 1.1 3.6 1.2 4.9 1 .8-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.1-.4-.2-.9-.4z"/>
+  </svg>
+  <span class="whatsapp-label">Chat on WhatsApp</span>
+</a>
+
+<script>
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+
+  // Active services nav pill on scroll
+  const sections = document.querySelectorAll('.service-section');
+  const navLinks = document.querySelectorAll('.services-nav-inner a');
+  const scrollObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector(`.services-nav-inner a[href="#${entry.target.id}"]`);
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(s => scrollObserver.observe(s));
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+<script>
+  // Hamburger menu
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var menuClose = document.getElementById('menuClose');
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    hamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if (hamburger) hamburger.addEventListener('click', function(e) { e.stopPropagation(); openMenu(); });
+  if (menuClose) menuClose.addEventListener('click', closeMenu);
+  if (mobileMenu) mobileMenu.addEventListener('click', function(e) { if (e.target === mobileMenu) closeMenu(); });
+  document.querySelectorAll('.mobile-menu-links a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+</script>
+</body>
+</html>

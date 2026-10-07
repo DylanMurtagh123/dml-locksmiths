@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Locksmith Claydon | DML Locksmiths | Local, Fast & Trusted</title>
+  <meta name="description" content="Need a locksmith in Claydon? DML Locksmiths provides emergency lockouts, lock fitting, repairs, key cutting and door/window adjustments across Claydon and nearby villages. No call-out fee. Call 01473 875026."/>
+  <meta name="keywords" content="locksmith Claydon, emergency locksmith Claydon, locked out Claydon, lock fitting Claydon, lock repair Claydon, key cutting Claydon, locksmith near me Claydon, DML Locksmiths Claydon, locksmith Barham, locksmith Great Blakenham, locksmith Little Blakenham, locksmith Bramford, locksmith Sproughton"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Locksmith Claydon | DML Locksmiths"/>
+  <meta property="og:description" content="Fast, trusted locksmith serving Claydon and surrounding villages. Emergency lockouts, lock fitting, repairs & more. No call-out fee. Call 01473 875026."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://www.dml-locksmiths.co.uk/locksmith-claydon.html"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocksmithService",
+    "name": "DML Locksmiths",
+    "description": "Professional locksmith serving Claydon and surrounding areas in Suffolk. Services include emergency lockouts, lock fitting, lock repairs, key cutting and door/window adjustments.",
+    "url": "https://www.dml-locksmiths.co.uk/locksmith-claydon.html",
+    "telephone": "01473875026",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ipswich",
+      "addressRegion": "Suffolk",
+      "addressCountry": "GB"
+    },
+    "areaServed": [
+      { "@type": "Town", "name": "Claydon" },
+      { "@type": "Village", "name": "Barham" },
+      { "@type": "Village", "name": "Great Blakenham" },
+      { "@type": "Village", "name": "Little Blakenham" },
+      { "@type": "Village", "name": "Bramford" },
+      { "@type": "Village", "name": "Sproughton" },
+      { "@type": "Village", "name": "Akenham" },
+      { "@type": "Village", "name": "Henley" },
+      { "@type": "Village", "name": "Great Blakenham" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Locksmith Services Claydon",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Emergency Lockout Claydon" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lock Fitting Claydon" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Lock Repair Claydon" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Key Cutting Claydon" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Door and Window Adjustment Claydon" } }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --gold: #c9a227;
+      --gold-light: #f0c84a;
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --white: #ffffff;
+      --text-muted: #aaa;
+      --radius: 4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--black); color: var(--white); font-family: 'Lato', sans-serif; font-weight: 300; line-height: 1.6; overflow-x: hidden; }
+    h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; line-height: 1.2; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    .gold { color: var(--gold); }
+    .section-label { font-family: 'Oswald', sans-serif; font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.75rem; display: block; }
+    .gold-divider { width: 48px; height: 3px; background: var(--gold); margin: 1rem 0 1.75rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; font-family: 'Oswald', sans-serif; font-size: 1rem; letter-spacing: 0.12em; text-transform: uppercase; padding: 0.85rem 2rem; border-radius: var(--radius); transition: all 0.2s ease; cursor: pointer; border: none; }
+    .btn-gold { background: var(--gold); color: var(--black); font-weight: 700; }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,162,39,0.35); }
+    .btn-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); font-weight: 600; }
+    .btn-outline:hover { background: var(--gold); color: var(--black); }
+
+    /* ─── REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .stagger-1 { transition-delay: 0.05s; }
+    .stagger-2 { transition-delay: 0.15s; }
+    .stagger-3 { transition-delay: 0.25s; }
+    .stagger-4 { transition-delay: 0.35s; }
+    .stagger-5 { transition-delay: 0.45s; }
+
+    /* ─── HEADER ─── */
+    .site-header { position: sticky; top: 0; z-index: 200; }
+    .topbar { background: var(--black); border-bottom: 1px solid rgba(201,162,39,0.15); padding: 0; }
+    .topbar-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 44px; gap: 1rem; }
+    .topbar-left { display: flex; align-items: center; gap: 1.5rem; }
+    .topbar-item { display: flex; align-items: center; gap: 0.45rem; font-family: 'Oswald', sans-serif; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.55); white-space: nowrap; }
+    .topbar-item svg { color: var(--gold); flex-shrink: 0; }
+    .topbar-right { display: flex; align-items: center; }
+    .topbar-cta { display: flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--black); font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; padding: 0 1.25rem; height: 44px; transition: background 0.2s; white-space: nowrap; }
+    .topbar-cta:hover { background: var(--gold-light); }
+    nav { background: rgba(10,10,10,0.97); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(201,162,39,0.2); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; display: flex; align-items: center; justify-content: space-between; height: 70px; gap: 1.5rem; }
+    .nav-logo img { height: 52px; width: auto; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; flex: 1; justify-content: center; }
+    .nav-links a { font-family: 'Oswald', sans-serif; font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.7); transition: color 0.2s; white-space: nowrap; }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-phone { font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; color: var(--gold); letter-spacing: 0.05em; white-space: nowrap; text-align: right; }
+    .nav-phone span { font-size: 0.65rem; display: block; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase; }
+    .hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); border-radius: var(--radius); cursor: pointer; padding: 8px; flex-shrink: 0; z-index: 201; position: relative; }
+    .hamburger span { display: block; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s ease; transform-origin: center; pointer-events: none; }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+    .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(10,10,10,0.98); z-index: 300; flex-direction: column; align-items: center; justify-content: center; padding: 2rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-links { display: flex; flex-direction: column; align-items: center; gap: 0.25rem; width: 100%; max-width: 320px; margin-bottom: 2rem; }
+    .mobile-menu-links a { font-family: 'Oswald', sans-serif; font-size: 1.6rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); padding: 0.75rem 0; width: 100%; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s; }
+    .mobile-menu-links a:last-child { border-bottom: none; }
+    .mobile-menu-links a:hover { color: var(--gold); }
+    .mobile-menu-cta { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 320px; }
+    .mobile-call-btn { display: flex; align-items: center; justify-content: center; gap: 0.6rem; background: var(--gold); color: var(--black); font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem; border-radius: var(--radius); transition: background 0.2s; }
+    .mobile-call-btn:hover { background: var(--gold-light); }
+    .mobile-wa-btn { display: flex; align-items: center; justify-content: center; gap: 0.6rem; background: #25D366; color: #fff; font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem; border-radius: var(--radius); transition: background 0.2s; }
+    .mobile-wa-btn:hover { background: #1da851; }
+    .mobile-menu-close { position: absolute; top: 1.25rem; right: 1.25rem; width: 44px; height: 44px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; color: var(--white); transition: background 0.2s; }
+    .mobile-menu-close:hover { background: rgba(255,255,255,0.18); }
+
+    /* ─── HERO ─── */
+    .hero {
+      position: relative;
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('image5.jpg') center/cover no-repeat;
+      filter: brightness(0.22) saturate(0.4);
+      transform: scale(1.05);
+      animation: heroZoom 14s ease-in-out infinite alternate;
+    }
+    @keyframes heroZoom { from { transform: scale(1.05); } to { transform: scale(1.12); } }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.4) 60%, rgba(201,162,39,0.06) 100%);
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 1.5rem 4rem;
+      width: 100%;
+    }
+    .hero-location-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(201,162,39,0.12);
+      border: 1px solid rgba(201,162,39,0.35);
+      color: var(--gold-light);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      padding: 0.45rem 1rem;
+      border-radius: 50px;
+      margin-bottom: 1.5rem;
+      animation: fadeInUp 0.6s ease both;
+    }
+    .hero h1 { font-size: clamp(2.8rem, 7vw, 5.5rem); margin-bottom: 1.25rem; animation: fadeInUp 0.7s 0.05s ease both; }
+    .hero h1 em { font-style: normal; color: var(--gold); }
+    .hero-sub { font-size: clamp(1rem, 2.5vw, 1.2rem); color: rgba(255,255,255,0.75); max-width: 580px; margin-bottom: 2.5rem; font-weight: 300; animation: fadeInUp 0.7s 0.15s ease both; line-height: 1.75; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 1rem; animation: fadeInUp 0.7s 0.25s ease both; }
+    .hero-phone-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--gold); color: var(--black); font-family: 'Oswald', sans-serif; font-size: 1.05rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.9rem 2rem; border-radius: var(--radius); transition: all 0.2s ease; }
+    .hero-phone-btn:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(201,162,39,0.4); }
+    .hero-trust { display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 3.5rem; animation: fadeInUp 0.7s 0.35s ease both; }
+    .hero-trust-item { display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: rgba(255,255,255,0.65); }
+    .hero-trust-item svg { color: var(--gold); flex-shrink: 0; }
+
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ─── STATS BAR ─── */
+    .stats-bar { background: var(--gold); padding: 0; }
+    .stats-bar-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); }
+    .stat-item { padding: 1.25rem 1.5rem; text-align: center; border-right: 1px solid rgba(0,0,0,0.1); }
+    .stat-item:last-child { border-right: none; }
+    .stat-item strong { display: block; font-family: 'Oswald', sans-serif; font-size: 1.5rem; font-weight: 700; color: var(--black); line-height: 1; }
+    .stat-item span { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.12em; color: rgba(0,0,0,0.6); font-weight: 700; }
+
+    /* ─── SERVICES ─── */
+    #services { background: var(--dark); padding: 6rem 1.5rem; }
+    .section-header { margin-bottom: 3rem; }
+    .section-header h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+    .section-header p { color: var(--text-muted); margin-top: 0.75rem; max-width: 580px; font-size: 0.95rem; line-height: 1.75; }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5px; }
+    .service-card { background: var(--dark2); padding: 2rem 1.75rem; position: relative; overflow: hidden; transition: background 0.25s; }
+    .service-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; background: var(--gold); transform: scaleX(0); transition: transform 0.3s ease; transform-origin: left; }
+    .service-card:hover { background: var(--dark3); }
+    .service-card:hover::after { transform: scaleX(1); }
+    .service-icon { width: 50px; height: 50px; background: rgba(201,162,39,0.1); border: 1px solid rgba(201,162,39,0.2); border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; color: var(--gold); transition: background 0.25s; }
+    .service-card:hover .service-icon { background: rgba(201,162,39,0.2); }
+    .service-card h3 { font-size: 1rem; margin-bottom: 0.6rem; }
+    .service-card p { font-size: 0.85rem; color: var(--text-muted); line-height: 1.7; margin-bottom: 0.85rem; }
+    .service-card a { font-family: 'Oswald', sans-serif; font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); display: inline-flex; align-items: center; gap: 0.4rem; transition: gap 0.2s; }
+    .service-card a:hover { gap: 0.7rem; }
+
+    /* ─── WHY CHOOSE ─── */
+    #why { background: var(--black); padding: 6rem 1.5rem; }
+    .why-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    .why-image-wrap { position: relative; }
+    .why-image-wrap img { width: 100%; height: 480px; object-fit: cover; border-radius: var(--radius); }
+    .why-image-wrap::before { content: ''; position: absolute; top: -14px; left: -14px; right: 14px; bottom: 14px; border: 2px solid rgba(201,162,39,0.2); border-radius: var(--radius); z-index: 0; }
+    .why-image-wrap img { position: relative; z-index: 1; }
+    .why-badge { position: absolute; bottom: -16px; right: -16px; z-index: 2; background: var(--gold); color: var(--black); font-family: 'Oswald', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; padding: 1rem 1.25rem; border-radius: var(--radius); text-align: center; line-height: 1.4; box-shadow: 0 6px 20px rgba(0,0,0,0.4); }
+    .why-badge strong { display: block; font-size: 1.5rem; letter-spacing: 0; }
+    .why-points { list-style: none; margin-top: 1.75rem; display: flex; flex-direction: column; gap: 1rem; }
+    .why-point { display: flex; align-items: flex-start; gap: 0.9rem; padding: 1rem 1.25rem; background: var(--dark); border-left: 3px solid var(--gold); border-radius: 0 var(--radius) var(--radius) 0; transition: transform 0.2s, background 0.2s; }
+    .why-point:hover { transform: translateX(5px); background: rgba(255,255,255,0.03); }
+    .why-point svg { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .why-point h4 { font-size: 0.9rem; margin-bottom: 0.2rem; }
+    .why-point p { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* ─── COMMON ISSUES ─── */
+    #issues { background: var(--dark); padding: 6rem 1.5rem; }
+    .issues-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
+    .issue-card { background: var(--dark2); border: 1px solid rgba(201,162,39,0.1); border-radius: 6px; padding: 1.75rem; transition: border-color 0.25s, transform 0.25s; }
+    .issue-card:hover { border-color: rgba(201,162,39,0.35); transform: translateY(-4px); }
+    .issue-number { font-family: 'Oswald', sans-serif; font-size: 2.5rem; font-weight: 700; color: rgba(201,162,39,0.12); line-height: 1; margin-bottom: 0.75rem; letter-spacing: -0.02em; }
+    .issue-card h3 { font-size: 0.95rem; margin-bottom: 0.6rem; }
+    .issue-card p { font-size: 0.83rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ─── AREAS NEARBY ─── */
+    #areas { background: var(--black); padding: 6rem 1.5rem; }
+    .areas-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .areas-text h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); margin-bottom: 0.5rem; }
+    .areas-text p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.75; margin-top: 0; }
+    .areas-pills { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 2rem; }
+    .area-pill { display: flex; align-items: center; gap: 0.5rem; background: var(--dark); border: 1px solid rgba(201,162,39,0.15); padding: 0.6rem 1.1rem; border-radius: 50px; font-family: 'Oswald', sans-serif; font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); transition: all 0.2s; }
+    .area-pill:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,162,39,0.05); }
+    .area-pill svg { color: var(--gold); }
+    .areas-map-card { background: var(--dark); border: 1px solid rgba(201,162,39,0.15); border-radius: 6px; overflow: hidden; }
+    .areas-map-card img { width: 100%; height: 280px; object-fit: cover; filter: brightness(0.7) saturate(0.5); }
+    .areas-map-card-body { padding: 1.25rem; }
+    .areas-map-card-body h4 { font-size: 0.9rem; margin-bottom: 0.4rem; }
+    .areas-map-card-body p { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* ─── FAQ ─── */
+    #faq { background: var(--dark); padding: 6rem 1.5rem; }
+    .faq-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { border-bottom: 1px solid rgba(255,255,255,0.07); }
+    .faq-item:first-child { border-top: 1px solid rgba(255,255,255,0.07); }
+    .faq-question { width: 100%; background: none; border: none; color: var(--white); display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 1.25rem 0; cursor: pointer; text-align: left; font-family: 'Oswald', sans-serif; font-size: 0.9rem; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; transition: color 0.2s; }
+    .faq-question:hover, .faq-question[aria-expanded="true"] { color: var(--gold); }
+    .faq-icon { flex-shrink: 0; transition: transform 0.3s ease; color: var(--gold); }
+    .faq-question[aria-expanded="true"] .faq-icon { transform: rotate(180deg); }
+    .faq-answer { overflow: hidden; max-height: 0; transition: max-height 0.35s ease, padding 0.3s ease; padding: 0; }
+    .faq-answer.open { max-height: 300px; padding-bottom: 1.25rem; }
+    .faq-answer p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.75; }
+    .faq-answer p a { color: var(--gold); }
+    .faq-cta-card { background: var(--dark2); border: 1px solid rgba(201,162,39,0.15); border-radius: 6px; padding: 2rem; position: sticky; top: 130px; }
+    .faq-cta-card img { width: 70px; margin-bottom: 1.25rem; border-radius: 4px; }
+    .faq-cta-card h3 { font-size: 1.2rem; margin-bottom: 0.6rem; }
+    .faq-cta-card p { font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1.5rem; line-height: 1.7; }
+    .faq-cta-actions { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    /* ─── MAP ─── */
+    #map { background: var(--black); padding: 5rem 1.5rem 0; }
+    .map-header { margin-bottom: 2rem; }
+    .map-header h2 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
+    .map-header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; }
+    .map-wrap { position: relative; border-top: 3px solid var(--gold); border-bottom: 3px solid var(--gold); }
+    #leaflet-map { height: 460px; width: 100%; background: var(--dark2); }
+    .map-badge { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 999; display: flex; align-items: center; gap: 0.6rem; background: rgba(10,10,10,0.9); border: 1px solid var(--gold); color: var(--white); font-family: 'Oswald', sans-serif; font-size: 0.88rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.65rem 1.4rem; border-radius: 50px; pointer-events: none; white-space: nowrap; }
+    .map-badge svg { color: var(--gold); }
+
+    /* ─── FINAL CTA ─── */
+    #cta { background: var(--gold); padding: 5.5rem 1.5rem; text-align: center; }
+    #cta h2 { color: var(--black); font-size: clamp(1.8rem, 4vw, 3rem); margin-bottom: 1rem; }
+    #cta p { color: rgba(0,0,0,0.65); max-width: 520px; margin: 0 auto 2.25rem; font-size: 1rem; }
+    .cta-actions { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; }
+    .cta-dark-btn { display: inline-flex; align-items: center; gap: 0.6rem; background: var(--black); color: var(--gold); font-family: 'Oswald', sans-serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 1rem 2.2rem; border-radius: var(--radius); transition: all 0.2s ease; }
+    .cta-dark-btn:hover { background: var(--dark2); transform: translateY(-2px); }
+    .cta-outline-dark { display: inline-flex; align-items: center; gap: 0.5rem; background: transparent; color: var(--black); border: 2px solid var(--black); font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 1rem 2rem; border-radius: var(--radius); transition: all 0.2s ease; }
+    .cta-outline-dark:hover { background: var(--black); color: var(--gold); }
+
+    /* ─── BREADCRUMB STRIP ─── */
+    .breadcrumb-strip { background: var(--dark); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 0.75rem 0; }
+    .breadcrumb { display: flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--text-muted); font-family: 'Oswald', sans-serif; letter-spacing: 0.1em; text-transform: uppercase; }
+    .breadcrumb a { color: var(--gold); }
+    .breadcrumb span { color: rgba(255,255,255,0.25); }
+
+    /* ─── FOOTER ─── */
+    footer { background: var(--dark); border-top: 1px solid rgba(201,162,39,0.15); padding: 3rem 1.5rem 2rem; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto auto auto; gap: 2.5rem; align-items: start; }
+    .footer-logo img { height: 60px; margin-bottom: 1rem; }
+    .footer-logo p { font-size: 0.82rem; color: var(--text-muted); max-width: 280px; }
+    .footer-col h4 { font-family: 'Oswald', sans-serif; font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { font-size: 0.85rem; color: var(--text-muted); padding: 0.25rem 0; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom { max-width: 1200px; margin: 2rem auto 0; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.07); display: flex; justify-content: space-between; font-size: 0.78rem; color: rgba(255,255,255,0.3); flex-wrap: wrap; gap: 0.5rem; }
+
+    /* ─── WHATSAPP ─── */
+    .whatsapp-btn { position: fixed; bottom: 28px; right: 28px; z-index: 999; width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: waBob 2.8s ease-in-out infinite, waGlow 2.8s ease-in-out infinite; transition: width 0.3s ease, border-radius 0.3s ease, background 0.2s; overflow: hidden; }
+    .whatsapp-btn:hover { width: 210px; border-radius: 30px; background: #1da851; animation: waGlow 2.8s ease-in-out infinite; }
+    .whatsapp-label { white-space: nowrap; font-family: 'Oswald', sans-serif; font-size: 0.85rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #fff; max-width: 0; overflow: hidden; opacity: 0; transition: max-width 0.3s ease, opacity 0.25s ease, margin 0.3s ease; }
+    .whatsapp-btn:hover .whatsapp-label { max-width: 160px; opacity: 1; margin-left: 8px; }
+    @keyframes waBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+    @keyframes waGlow { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.45),0 0 0 0 rgba(37,211,102,0.35)} 50%{box-shadow:0 6px 28px rgba(37,211,102,0.65),0 0 0 12px rgba(37,211,102,0)} }
+
+
+
+    /* Mobile tidy-up for location page links */
+    @media (max-width: 640px) {
+      .areas-pills {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.7rem;
+        margin-top: 1.75rem;
+        width: 100%;
+      }
+      .area-pill {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 0.8rem 1rem;
+        font-size: 0.76rem;
+        line-height: 1.2;
+        letter-spacing: 0.07em;
+        white-space: normal;
+      }
+      .area-pill svg {
+        flex-shrink: 0;
+      }
+    }
+
+    @media (min-width: 641px) and (max-width: 900px) {
+      .areas-pills {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.75rem;
+        width: 100%;
+      }
+      .area-pill {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .why-grid, .areas-layout, .faq-layout { grid-template-columns: 1fr; gap: 2.5rem; }
+      .why-image-wrap img { height: 300px; }
+      .topbar-left .topbar-item:not(:first-child) { display: none; }
+      .nav-links { display: none; }
+      .nav-phone { display: none; }
+      .hamburger { display: flex; }
+      .footer-inner { grid-template-columns: 1fr; }
+      .stats-bar-inner { grid-template-columns: repeat(2, 1fr); }
+      .faq-cta-card { position: static; }
+      #leaflet-map { height: 320px; }
+    }
+    @media (max-width: 480px) {
+      .topbar-cta span { display: none; }
+      .hero h1 { font-size: 2.4rem; }
+      .hero-phone-btn { width: 100%; justify-content: center; }
+      .whatsapp-btn { bottom: 20px; right: 18px; width: 54px; height: 54px; }
+      .whatsapp-btn:hover { width: 54px; border-radius: 50%; }
+      .whatsapp-label { display: none; }
+    }
+
+    /* FIX HERO TRUST ALIGNMENT ON MOBILE/TABLET */
+    @media (max-width: 900px) {
+      .hero-trust {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1rem !important;
+        margin-top: 2rem !important;
+        justify-items: start !important;
+      }
+
+      .hero-trust-item {
+        width: 100% !important;
+        justify-content: flex-start !important;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .hero-trust {
+        grid-template-columns: 1fr !important;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- SITE HEADER -->
+<div class="site-header">
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="topbar-left">
+        <div class="topbar-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Available 7 Days a Week</div>
+        <div class="topbar-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Claydon &amp; Suffolk</div>
+        <div class="topbar-item"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No Call-Out Fee</div>
+      </div>
+      <div class="topbar-right">
+        <a href="tel:01473875026" class="topbar-cta">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+          <span>Call 01473 875026</span>
+        </a>
+      </div>
+    </div>
+  </div>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="DML Locksmiths Ipswich logo"/></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="blog.html">Blog</a>
+      </div>
+      <div class="nav-phone"><span>Call Sean Now</span>01473 875026</div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <div class="mobile-menu-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="blog.html">Blog</a>
+  </div>
+  <div class="mobile-menu-cta">
+    <a href="tel:01473875026" class="mobile-call-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>Call 01473 875026</a>
+    <a href="https://wa.me/447591773419?text=Hi%20Sean%2C%20I%20found%20you%20on%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20your%20locksmith%20services.%20Could%20you%20help%20me%20please%3F" target="_blank" rel="noopener noreferrer" class="mobile-wa-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20"><path fill="#fff" d="M4.9 43.3l2.7-9.7C5.6 30.7 4.5 27.4 4.5 24 4.5 13.2 13.2 4.5 24 4.5S43.5 13.2 43.5 24 34.8 43.5 24 43.5c-3.3 0-6.4-.9-9.1-2.4L4.9 43.3z"/><path fill="#25D366" d="M24 7.5C14.8 7.5 7.5 14.8 7.5 24c0 3.2.9 6.2 2.5 8.8L7.4 41l8.4-2.6c2.5 1.4 5.3 2.1 8.2 2.1 9.2 0 16.5-7.3 16.5-16.5S33.2 7.5 24 7.5z"/><path fill="#fff" d="M33.3 28.5c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2-.3.5-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-2.6-1.3-4.3-2.3-6-5.2-.5-.8.5-.7 1.3-2.4.1-.3.1-.5-.1-.7-.2-.2-1-2.5-1.4-3.4-.4-.9-.7-.8-1-.8h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 2.6 1.1 3.6 1.2 4.9 1 .8-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.1-.4-.2-.9-.4z"/></svg>WhatsApp Sean</a>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-strip">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a><span>›</span>
+      <span style="color:rgba(255,255,255,0.5);">Locksmith Claydon</span>
+    </div>
+  </div>
+</div>
+
+<!-- ─── 1. HERO ─── -->
+<header class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-location-pill">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Serving Claydon &amp; Surrounding Villages
+    </div>
+    <h1>Locksmith in<br/><em>Claydon</em></h1>
+    <p class="hero-sub">Claydon residents deserve a locksmith who understands the local area. DML Locksmiths provides a fast, professional and honest service across Claydon — from homes close to the A14 and village centre to Barham, Great Blakenham and nearby communities. No call-out fee, no hidden costs.</p>
+    <div class="hero-actions">
+      <a href="tel:01473875026" class="hero-phone-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+        Call 01473 875026
+      </a>
+      <a href="contact.html" class="btn btn-outline">Get a Quote</a>
+    </div>
+    <div class="hero-trust">
+      <div class="hero-trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>UK Locksmiths Association Member</div>
+      <div class="hero-trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Fully Insured &amp; DBS Checked</div>
+      <div class="hero-trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>No Call-Out Fee</div>
+      <div class="hero-trust-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>7 Days a Week</div>
+    </div>
+  </div>
+</header>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item"><strong>£0</strong><span>Call-Out Fee</span></div>
+    <div class="stat-item"><strong>Fast</strong><span>Response Times</span></div>
+    <div class="stat-item"><strong>7 Days</strong><span>A Week</span></div>
+    <div class="stat-item"><strong>Vetted</strong><span>UKLA Member</span></div>
+  </div>
+</div>
+
+<!-- ─── 2. SERVICES ─── -->
+<section id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">What We Offer in Claydon</span>
+      <h2>Locksmith <em class="gold">Services</em> in Claydon</h2>
+      <p>Whether you're locked out at home in Claydon, need a lock replaced in Barham, or want your home security upgraded in Great Blakenham, Bramford or nearby villages, Sean covers the full range of locksmith services across Claydon and the surrounding area.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal stagger-1">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg></div>
+        <h3>Emergency Lockouts in Claydon</h3>
+        <p>Locked out of your Claydon home, rental property or business premises? Sean responds quickly across the village and nearby areas, using non-destructive methods wherever possible to get you back inside fast.</p>
+        <a href="services.html#emergency">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="service-card reveal stagger-2">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div>
+        <h3>Lock Fitting in Claydon</h3>
+        <p>Moving into a Claydon property or upgrading your home security? Sean supplies and fits quality locks — from standard cylinders to high-security anti-snap options — fitted correctly and professionally.</p>
+        <a href="services.html#fitting">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="service-card reveal stagger-3">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <h3>Lock Repairs in Claydon</h3>
+        <p>A stiff or faulty lock in a Claydon home can quickly become frustrating — especially with busy family homes, rental properties and uPVC doors that get used every day. Sean will diagnose and repair where possible before recommending replacement.</p>
+        <a href="services.html#repairs">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="service-card reveal stagger-4">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <h3>Door/Window Adjustments in Claydon</h3>
+        <p>Properties around Claydon can experience door and window movement caused by weather changes, ageing hinges and everyday use. Sean can realign, adjust and repair so everything closes and locks as it should.</p>
+        <a href="services.html#adjustments">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+      <div class="service-card reveal stagger-5">
+        <div class="service-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2l-2 2m-7.61 7.61a5.5 5.5 0 11-7.778 7.778 5.5 5.5 0 017.777-7.777zm0 0L15.5 7.5m0 0l3 3L22 7l-3-3m-3.5 3.5L19 4"/></svg></div>
+        <h3>Key Cutting in Claydon</h3>
+        <p>Need a spare set cut for a family member, cleaner, tenant or trusted neighbour? Sean provides accurate key cutting for standard residential key types across Claydon and the surrounding area.</p>
+        <a href="services.html#keycutting">Learn more <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 3. WHY CHOOSE DML IN CLAYDON ─── -->
+<section id="why">
+  <div class="container">
+    <div class="why-grid">
+      <div class="why-image-wrap reveal-left">
+        <img src="image7.jpg" alt="DML Locksmiths professional locksmith serving Claydon Suffolk"/>
+        <div class="why-badge"><strong>Local</strong>Suffolk<br/>Based</div>
+      </div>
+      <div class="reveal-right">
+        <span class="section-label">Why Choose DML in Claydon</span>
+        <h2>A Locksmith Who <em class="gold">Knows Claydon</em></h2>
+        <div class="gold-divider"></div>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:0; line-height:1.8;">Claydon is a popular village on the edge of Ipswich, with a mix of family homes, newer developments, rental properties and nearby rural villages. From everyday lockouts to uPVC door issues and move-in lock changes, Sean understands the kind of locksmith problems Claydon residents commonly face.</p>
+        <ul class="why-points">
+          <li class="why-point">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><h4>Fast Response to Claydon</h4><p>Based in Ipswich, only a short drive from Claydon — Sean aims to reach customers promptly for urgent callouts.</p></div>
+          </li>
+          <li class="why-point">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><h4>Village &amp; Commuter Area Knowledge</h4><p>Claydon is a busy commuter village close to Ipswich and the A14, so lockouts, misplaced keys and urgent access issues often need a quick, practical response.</p></div>
+          </li>
+          <li class="why-point">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><h4>Landlord &amp; Rental Support</h4><p>Sean can help Claydon landlords, tenants and letting agents with lock changes, key cutting, emergency access and security upgrades between tenancies.</p></div>
+          </li>
+          <li class="why-point">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            <div><h4>Honest, Upfront Pricing</h4><p>No call-out fee. No hidden costs. You're given a clear price before any work begins — every time.</p></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 4. COMMON LOCK ISSUES IN CLAYDON ─── -->
+<section id="issues">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">Claydon-Specific</span>
+      <h2>Common Lock Issues in <em class="gold">Claydon</em></h2>
+      <p>Claydon has a practical mix of family homes, newer estates, rental properties and nearby village homes — and each can bring its own common lock and door problems.</p>
+    </div>
+    <div class="issues-grid">
+      <div class="issue-card reveal stagger-1">
+        <div class="issue-number">01</div>
+        <h3>uPVC Door Mechanism Wear</h3>
+        <p>Many Claydon homes use uPVC doors with multi-point locking systems. Over time, handles can become stiff, mechanisms can wear, and doors can drop slightly — making the lock harder to use or less secure.</p>
+      </div>
+      <div class="issue-card reveal stagger-2">
+        <div class="issue-number">02</div>
+        <h3>Move-In Lock Changes</h3>
+        <p>Claydon is popular with homeowners and renters, so lock changes are often needed when keys are unaccounted for, tenants move out, or new owners want complete peace of mind.</p>
+      </div>
+      <div class="issue-card reveal stagger-3">
+        <div class="issue-number">03</div>
+        <h3>Lost Keys &amp; Family Lockouts</h3>
+        <p>Busy households, school runs and commuting can easily lead to misplaced keys or accidental lockouts. Sean can help you regain entry safely and advise whether the lock needs changing afterwards.</p>
+      </div>
+      <div class="issue-card reveal stagger-4">
+        <div class="issue-number">04</div>
+        <h3>Misaligned Doors and Stiff Locks</h3>
+        <p>Seasonal weather and everyday use can cause doors to move out of alignment. This puts pressure on the lock, making keys harder to turn and increasing the risk of the mechanism failing completely.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 5. AREAS NEARBY ─── -->
+<section id="areas">
+  <div class="container">
+    <div class="areas-layout">
+      <div class="reveal-left">
+        <span class="section-label">Coverage Around Claydon</span>
+        <h2>Claydon &amp; <em class="gold">Nearby Suffolk Villages</em></h2>
+        <div class="gold-divider"></div>
+        <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.8;">DML Locksmiths covers Claydon and nearby areas including Barham, Great Blakenham, Little Blakenham, Bramford, Sproughton, Akenham and Henley. If you're unsure whether Sean covers your exact location, just call and he'll let you know straight away.</p>
+        <div class="areas-pills">
+          <a href="locksmith-ipswich.html" class="area-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Locksmith Ipswich</a>
+          <a href="locksmith-felixstowe.html" class="area-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Locksmith Felixstowe</a>
+          <a href="locksmith-woodbridge.html" class="area-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Locksmith Woodbridge</a>
+          <a href="locksmith-stowmarket.html" class="area-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Locksmith Stowmarket</a>
+          <a href="locksmith-kesgrave.html" class="area-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Locksmith Kesgrave</a>
+          <a href="locksmith-martlesham.html" class="area-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Locksmith Martlesham</a>
+          <a href="locksmith-claydon.html" class="area-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Locksmith Claydon</a>
+          <a href="locksmith-bramford.html" class="area-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Locksmith Bramford</a>
+          <a href="locksmith-hadleigh.html" class="area-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Locksmith Hadleigh</a>
+          <a href="locksmith-needham-market.html" class="area-pill"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Locksmith Needham Market</a>
+        </div>
+        <p style="color:var(--text-muted); font-size:0.82rem; margin-top:1.5rem;">Also covering nearby areas including Barham, Great Blakenham, Little Blakenham, Bramford, Sproughton, Akenham and Henley. <a href="index.html#areas" style="color:var(--gold);">See full coverage →</a></p>
+      </div>
+      <div class="reveal-right">
+        <div class="areas-map-card">
+          <img src="image3.jpg" alt="DML Locksmiths covering Claydon and surrounding villages in Suffolk"/>
+          <div class="areas-map-card-body">
+            <h4>Based in Ipswich — Minutes from Claydon</h4>
+            <p style="color:var(--text-muted); font-size:0.83rem; line-height:1.65; margin-top:0.4rem;">Claydon is a short drive from Sean's base in Ipswich, meaning fast response times for emergency callouts across the village, Barham, Great Blakenham and surrounding areas. Call ahead and Sean will confirm his estimated arrival time.</p>
+          </div>
+        </div>
+        <a href="contact.html" class="btn btn-gold" style="width:100%; justify-content:center; margin-top:1rem;">Get a Free Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 6. FAQ ─── -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-layout">
+      <div class="reveal-left">
+        <span class="section-label">Claydon FAQs</span>
+        <h2>Questions About Locksmith Services in <em class="gold">Claydon</em></h2>
+        <div class="gold-divider"></div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Do you cover all of Claydon?<span class="faq-icon">⌄</span></button>
+            <div class="faq-answer"><p>Yes. Sean covers Claydon, Barham, Great Blakenham, Little Blakenham, Bramford, Sproughton, Akenham, Henley and nearby areas. If you're just outside Claydon, call and Sean will confirm availability.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">How quickly can you get to Claydon?<span class="faq-icon">⌄</span></button>
+            <div class="faq-answer"><p>DML Locksmiths is based in Ipswich, so Claydon is usually a quick journey away. Response times depend on traffic, current jobs and the exact location, but Sean will always give you a clear estimated arrival time.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Can you help with period property locks?<span class="faq-icon">⌄</span></button>
+            <div class="faq-answer"><p>Yes. Sean can advise on suitable lock repairs, replacements and security upgrades for Claydon homes, including uPVC doors, timber doors and rental properties.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Do you repair uPVC door locks in Claydon?<span class="faq-icon">⌄</span></button>
+            <div class="faq-answer"><p>Yes. Sean can help with stiff uPVC doors, faulty multi-point locking mechanisms, misaligned doors, dropped handles and locks that no longer engage properly.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">Is there a call-out fee for Claydon?<span class="faq-icon">⌄</span></button>
+            <div class="faq-answer"><p>No — DML Locksmiths does not charge a call-out fee. Sean will explain the likely cost before work begins, so there are no hidden surprises.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="faq-cta-card reveal-right">
+        <img src="logo.jpg" alt="DML Locksmiths logo"/>
+        <h3>Need a Locksmith in Claydon?</h3>
+        <p>Whether you're locked out, need a lock repaired, or want your Claydon home secured, Sean is ready to help with a professional, friendly service.</p>
+        <div class="faq-cta-actions">
+          <a href="tel:01473875026" class="btn btn-gold">Call 01473 875026</a>
+          <a href="contact.html" class="btn btn-outline">Send a Message</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── 7. MAP ─── -->
+<section id="map">
+  <div class="container">
+    <div class="map-header reveal">
+      <span class="section-label">Claydon Coverage</span>
+      <h2>Find Us on the <em class="gold">Map</em></h2>
+      <p>DML Locksmiths is based in Ipswich — a short drive from Claydon. The map below shows the Claydon area Sean covers.</p>
+    </div>
+  </div>
+  <div class="map-wrap">
+    <div id="leaflet-map"></div>
+    <div class="map-badge">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      DML Locksmiths — Serving Claydon, Suffolk
+    </div>
+  </div>
+</section>
+
+<!-- ─── 8. CALL TO ACTION ─── -->
+<section id="cta">
+  <div class="container" style="padding:0;">
+    <span class="section-label" style="display:block; text-align:center; margin-bottom:0.75rem;">Ready to Get Help?</span>
+    <h2>Need a Locksmith in <em style="font-style:normal; color:var(--black); text-decoration:underline; text-decoration-color:rgba(0,0,0,0.3);">Claydon?</em></h2>
+    <p>Whether it's an emergency lockout, a new lock fitting, or a repair — Sean is ready to help across Claydon and the surrounding area. Call now for a fast, honest service with no call-out fee.</p>
+    <div class="cta-actions">
+      <a href="tel:01473875026" class="cta-dark-btn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+        Call 01473 875026
+      </a>
+      <a href="contact.html" class="cta-outline-dark">Send a Message</a>
+      <a href="services.html" class="cta-outline-dark">View All Services</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="logo.jpg" alt="DML Locksmiths Ipswich"/>
+      <p>Your trusted local locksmith in Ipswich, Claydon and across Suffolk. Vetted, insured and always professional.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Pages</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Areas</h4>
+      <ul>
+        <li><a href="locksmith-ipswich.html">Ipswich</a></li>
+        <li><a href="locksmith-felixstowe.html">Felixstowe</a></li>
+        <li><a href="locksmith-woodbridge.html">Woodbridge</a></li>
+        <li><a href="locksmith-stowmarket.html">Stowmarket</a></li>
+        <li><a href="locksmith-kesgrave.html">Kesgrave</a></li>
+        <li><a href="locksmith-martlesham.html">Martlesham</a></li>
+        <li><a href="locksmith-claydon.html">Claydon</a></li>
+        <li><a href="locksmith-bramford.html">Bramford</a></li>
+        <li><a href="locksmith-hadleigh.html">Hadleigh</a></li>
+        <li><a href="locksmith-needham-market.html">Needham Market</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:01473875026">01473 875026</a></li>
+        <li>Ipswich, Suffolk</li>
+        <li>7 Days a Week</li>
+        <li style="margin-top:0.75rem;"><img src="locksmithassociation.jpg" alt="UK Locksmiths Association member" style="width:60px; border-radius:4px;"/></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 DML Locksmiths. All rights reserved.</span>
+    <span>Serving Claydon, Ipswich &amp; Suffolk</span>
+  </div>
+  
+  <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.4);">
+  <a href="privacy-policy.html" style="color: #c9a227; text-decoration: none;">Privacy Policy</a>
+  <span style="margin: 0 0.6rem; color: rgba(255,255,255,0.3);">|</span>
+  <a href="terms-and-conditions.html" style="color: #c9a227; text-decoration: none;">Terms &amp; Conditions</a>
+</div>
+  
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/447591773419?text=Hi%20Sean%2C%20I%20found%20you%20on%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20your%20locksmith%20services%20in%20Claydon.%20Could%20you%20help%20me%20please%3F" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Chat with Sean on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30" height="30"><path fill="#fff" d="M4.9 43.3l2.7-9.7C5.6 30.7 4.5 27.4 4.5 24 4.5 13.2 13.2 4.5 24 4.5S43.5 13.2 43.5 24 34.8 43.5 24 43.5c-3.3 0-6.4-.9-9.1-2.4L4.9 43.3z"/><path fill="#25D366" d="M24 7.5C14.8 7.5 7.5 14.8 7.5 24c0 3.2.9 6.2 2.5 8.8L7.4 41l8.4-2.6c2.5 1.4 5.3 2.1 8.2 2.1 9.2 0 16.5-7.3 16.5-16.5S33.2 7.5 24 7.5z"/><path fill="#fff" d="M33.3 28.5c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2-.3.5-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-2.6-1.3-4.3-2.3-6-5.2-.5-.8.5-.7 1.3-2.4.1-.3.1-.5-.1-.7-.2-.2-1-2.5-1.4-3.4-.4-.9-.7-.8-1-.8h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 2.6 1.1 3.6 1.2 4.9 1 .8-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.1-.4-.2-.9-.4z"/></svg>
+  <span class="whatsapp-label">Chat on WhatsApp</span>
+</a>
+
+<script>
+  // Hamburger
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var menuClose = document.getElementById('menuClose');
+  function openMenu() { mobileMenu.classList.add('open'); hamburger.classList.add('open'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { mobileMenu.classList.remove('open'); hamburger.classList.remove('open'); document.body.style.overflow = ''; }
+  if (hamburger) hamburger.addEventListener('click', function(e) { e.stopPropagation(); openMenu(); });
+  if (menuClose) menuClose.addEventListener('click', closeMenu);
+  if (mobileMenu) mobileMenu.addEventListener('click', function(e) { if (e.target === mobileMenu) closeMenu(); });
+  document.querySelectorAll('.mobile-menu-links a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+
+  // Scroll reveal
+  var revealObs = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(function(el) { revealObs.observe(el); });
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-question').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var answer = btn.nextElementSibling;
+      var isOpen = btn.getAttribute('aria-expanded') === 'true';
+      document.querySelectorAll('.faq-question').forEach(function(b) { b.setAttribute('aria-expanded','false'); b.nextElementSibling.classList.remove('open'); });
+      if (!isOpen) { btn.setAttribute('aria-expanded','true'); answer.classList.add('open'); }
+    });
+  });
+
+  // Leaflet map centred on Claydon
+  var leafletScript = document.createElement('script');
+  leafletScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+  leafletScript.onload = function() {
+    var map = L.map('leaflet-map', { zoomControl: true, scrollWheelZoom: false }).setView([52.1065, 1.1109], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    var goldIcon = L.divIcon({
+      className: '',
+      html: '<div style="background:#c9a227;width:18px;height:18px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);border:3px solid #0a0a0a;box-shadow:0 2px 12px rgba(201,162,39,0.6);"></div>',
+      iconSize: [18, 18], iconAnchor: [9, 18], popupAnchor: [0, -20]
+    });
+
+    L.marker([52.1065, 1.1109], { icon: goldIcon })
+      .addTo(map)
+      .bindPopup('<div style="font-family:\'Oswald\',sans-serif;text-align:center;padding:4px 8px;"><strong style="font-size:1rem;letter-spacing:0.05em;">DML LOCKSMITHS</strong><br/><span style="font-size:0.8rem;color:#666;">Serving Claydon, Suffolk</span><br/><a href="tel:01473875026" style="color:#c9a227;font-size:0.85rem;font-weight:700;">01473 875026</a></div>', { maxWidth: 200 })
+      .openPopup();
+  };
+  document.body.appendChild(leafletScript);
+</script>
+</body>
+</html>

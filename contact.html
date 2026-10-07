@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact DML Locksmiths Ipswich | Call or Message Your Local Locksmith</title>
+  <meta name="description" content="Get in touch with DML Locksmiths in Ipswich, Suffolk. Call Sean on 01473 875026 for emergency lockouts, lock fitting, repairs and more. No call-out fee. Available 7 days a week."/>
+  <meta name="keywords" content="contact locksmith Ipswich, locksmith phone number Ipswich, emergency locksmith contact Suffolk, DML Locksmiths contact, locksmith near me Ipswich"/>
+  <meta name="robots" content="index, follow"/>
+  <meta property="og:title" content="Contact DML Locksmiths | Locksmith Ipswich"/>
+  <meta property="og:description" content="Call or message Sean at DML Locksmiths in Ipswich. Emergency lockouts, lock fitting, repairs & more. No call-out fee. 01473 875026."/>
+  <meta property="og:type" content="website"/>
+  <link rel="canonical" href="https://dml-locksmiths.co.uk/contact.html"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocksmithService",
+    "name": "DML Locksmiths",
+    "url": "https://dml-locksmiths.co.uk",
+    "telephone": "01473875026",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Ipswich",
+      "addressRegion": "Suffolk",
+      "addressCountry": "GB"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 52.0567,
+      "longitude": 1.1482
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+        "opens": "07:00",
+        "closes": "22:00"
+      }
+    ],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "01473875026",
+      "contactType": "Customer Service",
+      "areaServed": "Ipswich, Suffolk",
+      "availableLanguage": "English"
+    }
+  }
+
+</script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --gold: #c9a227;
+      --gold-light: #f0c84a;
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --white: #ffffff;
+      --text-muted: #aaa;
+      --radius: 4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Oswald', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.2;
+    }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ─── UTILITY ─── */
+    .gold { color: var(--gold); }
+    .section-label {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+    .gold-divider { width: 48px; height: 3px; background: var(--gold); margin: 1rem 0 1.75rem; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 0.85rem 2rem;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-gold { background: var(--gold); color: var(--black); font-weight: 700; }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 24px rgba(201,162,39,0.35); }
+    .btn-outline { background: transparent; color: var(--gold); border: 2px solid var(--gold); font-weight: 600; }
+    .btn-outline:hover { background: var(--gold); color: var(--black); }
+
+    /* ─── REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left { opacity: 0; transform: translateX(-32px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal-left.visible { opacity: 1; transform: translateX(0); }
+    .reveal-right { opacity: 0; transform: translateX(32px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .reveal-right.visible { opacity: 1; transform: translateX(0); }
+    .stagger-1 { transition-delay: 0.05s; }
+    .stagger-2 { transition-delay: 0.15s; }
+    .stagger-3 { transition-delay: 0.25s; }
+
+            /* ─── TOPBAR + NAV STICKY WRAPPER ─── */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+    }
+
+    /* ─── TOPBAR ─── */
+    .topbar {
+      background: var(--black);
+      border-bottom: 1px solid rgba(201,162,39,0.15);
+      padding: 0;
+    }
+    .topbar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 44px;
+      gap: 1rem;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 1.5rem; }
+    .topbar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      white-space: nowrap;
+    }
+    .topbar-item svg { color: var(--gold); flex-shrink: 0; }
+    .topbar-item a { color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .topbar-item a:hover { color: var(--gold); }
+    .topbar-right { display: flex; align-items: center; }
+    .topbar-cta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold);
+      color: var(--black);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 0 1.25rem;
+      height: 44px;
+      transition: background 0.2s;
+      white-space: nowrap;
+    }
+    .topbar-cta:hover { background: var(--gold-light); }
+    .topbar-cta svg { flex-shrink: 0; }
+
+    /* ─── NAV ─── */
+    nav {
+      background: rgba(10,10,10,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(201,162,39,0.2);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+      gap: 1.5rem;
+    }
+    .nav-logo img { height: 52px; width: auto; }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex: 1;
+      justify-content: center;
+    }
+    .nav-links a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      transition: color 0.2s;
+      white-space: nowrap;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+    .nav-phone {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      text-align: right;
+    }
+    .nav-phone span { font-size: 0.65rem; display: block; color: var(--text-muted); letter-spacing: 0.12em; text-transform: uppercase; }
+
+    /* ─── HAMBURGER ─── */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: var(--radius);
+      cursor: pointer;
+      padding: 8px;
+      flex-shrink: 0;
+      z-index: 201;
+      position: relative;
+    }
+    .hamburger span {
+      display: block;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s ease;
+      transform-origin: center;
+      pointer-events: none;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ─── MOBILE MENU ─── */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(10,10,10,0.98);
+      z-index: 300;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .mobile-menu.open {
+      display: flex;
+    }
+    .mobile-menu-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.25rem;
+      width: 100%;
+      max-width: 320px;
+      margin-bottom: 2rem;
+    }
+    .mobile-menu-links a {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      padding: 0.75rem 0;
+      width: 100%;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .mobile-menu-links a:last-child { border-bottom: none; }
+    .mobile-menu-links a:hover, .mobile-menu-links a.active { color: var(--gold); }
+    .mobile-menu-cta { display: flex; flex-direction: column; gap: 0.75rem; width: 100%; max-width: 320px; }
+    .mobile-call-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      background: var(--gold); color: var(--black);
+      font-family: 'Oswald', sans-serif; font-size: 1.1rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 1rem;
+      border-radius: var(--radius); transition: background 0.2s;
+      text-decoration: none;
+    }
+    .mobile-call-btn:hover { background: var(--gold-light); }
+    .mobile-wa-btn {
+      display: flex; align-items: center; justify-content: center; gap: 0.6rem;
+      background: #25D366; color: #fff;
+      font-family: 'Oswald', sans-serif; font-size: 1rem; font-weight: 600;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 0.85rem;
+      border-radius: var(--radius); transition: background 0.2s;
+      text-decoration: none;
+    }
+    .mobile-wa-btn:hover { background: #1da851; }
+    .mobile-menu-close {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      width: 44px; height: 44px; background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12); border-radius: 50%; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--white); transition: background 0.2s;
+    }
+    .mobile-menu-close:hover { background: rgba(255,255,255,0.18); }
+
+    @media (max-width: 900px) {
+      .topbar-left .topbar-item:not(:first-child) { display: none; }
+      .nav-links { display: none; }
+      .nav-phone { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 480px) {
+      .topbar-cta span { display: none; }
+    }
+
+/* ─── PAGE HERO ─── */
+    .page-hero {
+      position: relative;
+      padding: 7rem 1.5rem 5rem;
+      overflow: hidden;
+    }
+    .page-hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('image6.jpg') center/cover no-repeat;
+      filter: brightness(0.15) saturate(0.3);
+    }
+    .page-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(10,10,10,0.97) 45%, rgba(10,10,10,0.55) 100%);
+    }
+    .page-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+      font-family: 'Oswald', sans-serif;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .breadcrumb a { color: var(--gold); }
+    .breadcrumb span { color: rgba(255,255,255,0.3); }
+    .page-hero h1 { font-size: clamp(2.4rem, 5vw, 4rem); margin-bottom: 1.25rem; animation: fadeInUp 0.7s ease both; }
+    .page-hero-lead {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      line-height: 1.8;
+      animation: fadeInUp 0.7s 0.1s ease both;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ─── QUICK CONTACT STRIP ─── */
+    .quick-contact {
+      background: var(--gold);
+      padding: 0;
+    }
+    .quick-contact-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .quick-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1.5rem 2rem;
+      border-right: 1px solid rgba(0,0,0,0.1);
+      transition: background 0.2s;
+      text-decoration: none;
+    }
+    .quick-item:last-child { border-right: none; }
+    .quick-item:hover { background: rgba(0,0,0,0.06); }
+    .quick-item-icon {
+      width: 44px; height: 44px;
+      background: rgba(0,0,0,0.12);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--black);
+    }
+    .quick-item-text span {
+      display: block;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(0,0,0,0.55);
+      margin-bottom: 0.15rem;
+    }
+    .quick-item-text strong {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 0.04em;
+    }
+
+    /* ─── MAIN CONTACT SECTION ─── */
+    #contact-main {
+      background: var(--dark);
+      padding: 6rem 1.5rem;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    /* ─── CONTACT INFO SIDE ─── */
+    .contact-info h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); margin-bottom: 0.5rem; }
+    .contact-info > p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0; line-height: 1.8; }
+    .contact-cards {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      background: var(--dark2);
+      border: 1px solid rgba(201,162,39,0.12);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      transition: border-color 0.2s, background 0.2s;
+      text-decoration: none;
+      color: inherit;
+    }
+    .contact-card:hover { border-color: var(--gold); background: rgba(201,162,39,0.04); }
+    .contact-card-icon {
+      width: 48px; height: 48px;
+      background: rgba(201,162,39,0.1);
+      border: 1px solid rgba(201,162,39,0.2);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+      transition: background 0.2s;
+    }
+    .contact-card:hover .contact-card-icon { background: rgba(201,162,39,0.2); }
+    .contact-card-text span {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--text-muted);
+      display: block;
+      margin-bottom: 0.2rem;
+    }
+    .contact-card-text strong {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      color: var(--white);
+    }
+    .contact-card-text p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.15rem;
+    }
+    .emergency-note {
+      margin-top: 1.75rem;
+      background: rgba(201,162,39,0.08);
+      border: 1px solid rgba(201,162,39,0.25);
+      border-radius: var(--radius);
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+    .emergency-note svg { color: var(--gold); flex-shrink: 0; margin-top: 2px; }
+    .emergency-note h4 {
+      font-size: 0.85rem;
+      margin-bottom: 0.3rem;
+      color: var(--gold);
+    }
+    .emergency-note p { font-size: 0.82rem; color: var(--text-muted); }
+
+    /* ─── FORM SIDE ─── */
+    .contact-form-wrap { position: relative; }
+    .contact-form {
+      background: var(--dark2);
+      border: 1px solid rgba(201,162,39,0.15);
+      border-radius: 8px;
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .form-header { margin-bottom: 0.25rem; }
+    .form-header h3 { font-size: 1.2rem; margin-bottom: 0.35rem; }
+    .form-header p { font-size: 0.83rem; color: var(--text-muted); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+    .form-group label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      font-weight: 700;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      background: var(--dark3);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white);
+      font-family: 'Lato', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.8rem 1rem;
+      border-radius: var(--radius);
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+    .form-group input::placeholder,
+    .form-group textarea::placeholder { color: rgba(255,255,255,0.2); }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 3px rgba(201,162,39,0.08);
+    }
+    .form-group select {
+      cursor: pointer;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23c9a227' stroke-width='2.5'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+    }
+    .form-group select option { background: var(--dark2); }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+    .form-submit { margin-top: 0.25rem; }
+    .form-submit button {
+      width: 100%;
+      justify-content: center;
+      font-size: 1rem;
+      padding: 1rem;
+    }
+    .form-note {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+    .form-note a { color: var(--gold); }
+    .form-success {
+      position: absolute;
+      inset: 0;
+      background: var(--dark2);
+      border: 1px solid rgba(201,162,39,0.15);
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      gap: 0.75rem;
+    }
+    .form-success svg { color: var(--gold); }
+    .form-success h3 { font-size: 1.5rem; color: var(--gold); }
+    .form-success p { color: var(--text-muted); font-size: 0.9rem; }
+
+    /* ─── MAP SECTION ─── */
+    #map { background: var(--black); padding: 5rem 1.5rem 0; }
+    .map-header { margin-bottom: 2rem; }
+    .map-header h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); }
+    .map-header p { color: var(--text-muted); font-size: 0.95rem; margin-top: 0.5rem; }
+    .map-wrap {
+      position: relative;
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
+    }
+    #leaflet-map {
+      height: 460px;
+      width: 100%;
+      background: var(--dark2);
+    }
+    .map-overlay-badge {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(10,10,10,0.9);
+      border: 1px solid var(--gold);
+      color: var(--white);
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.65rem 1.4rem;
+      border-radius: 50px;
+      pointer-events: none;
+      white-space: nowrap;
+    }
+    .map-overlay-badge svg { color: var(--gold); flex-shrink: 0; }
+
+    /* ─── AREAS STRIP ─── */
+    #areas {
+      background: var(--dark);
+      padding: 5rem 1.5rem;
+    }
+    .areas-header { margin-bottom: 2rem; }
+    .areas-header h2 { font-size: clamp(1.5rem, 2.5vw, 2.2rem); }
+    .areas-header p { color: var(--text-muted); font-size: 0.9rem; margin-top: 0.5rem; }
+    .areas-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+    }
+    .area-pill {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--dark2);
+      border: 1px solid rgba(201,162,39,0.15);
+      padding: 0.6rem 1.1rem;
+      border-radius: 50px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+      transition: all 0.2s;
+    }
+    .area-pill:hover { border-color: var(--gold); color: var(--gold); background: rgba(201,162,39,0.05); }
+    .area-pill svg { color: var(--gold); }
+
+    /* ─── FINAL CTA ─── */
+    .final-cta {
+      background: var(--gold);
+      padding: 4.5rem 1.5rem;
+      text-align: center;
+    }
+    .final-cta h2 { color: var(--black); font-size: clamp(1.6rem, 4vw, 2.8rem); margin-bottom: 0.75rem; }
+    .final-cta p { color: rgba(0,0,0,0.65); max-width: 480px; margin: 0 auto 2rem; font-size: 0.95rem; }
+    .cta-dark-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--black);
+      color: var(--gold);
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.9rem 2.2rem;
+      border-radius: var(--radius);
+      transition: all 0.2s ease;
+    }
+    .cta-dark-btn:hover { background: var(--dark2); transform: translateY(-2px); }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      border-top: 1px solid rgba(201,162,39,0.15);
+      padding: 3rem 1.5rem 2rem;
+    }
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto auto;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .footer-logo img { height: 60px; margin-bottom: 1rem; }
+    .footer-logo p { font-size: 0.82rem; color: var(--text-muted); max-width: 280px; }
+    .footer-col h4 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { font-size: 0.85rem; color: var(--text-muted); padding: 0.25rem 0; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-bottom {
+      max-width: 1200px;
+      margin: 2rem auto 0;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.3);
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    /* ─── WHATSAPP ─── */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 28px; right: 28px; z-index: 999;
+      width: 60px; height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      animation: waBob 2.8s ease-in-out infinite, waGlow 2.8s ease-in-out infinite;
+      transition: width 0.3s ease, border-radius 0.3s ease, background 0.2s;
+      overflow: hidden;
+    }
+    .whatsapp-btn:hover { width: 210px; border-radius: 30px; background: #1da851; animation: waGlow 2.8s ease-in-out infinite; }
+    .whatsapp-label {
+      white-space: nowrap;
+      font-family: 'Oswald', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #fff;
+      max-width: 0; overflow: hidden; opacity: 0;
+      transition: max-width 0.3s ease, opacity 0.25s ease, margin 0.3s ease;
+    }
+    .whatsapp-btn:hover .whatsapp-label { max-width: 160px; opacity: 1; margin-left: 8px; }
+    @keyframes waBob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-7px)} }
+    @keyframes waGlow {
+      0%,100%{box-shadow:0 4px 20px rgba(37,211,102,0.45),0 0 0 0 rgba(37,211,102,0.35)}
+      50%{box-shadow:0 6px 28px rgba(37,211,102,0.65),0 0 0 12px rgba(37,211,102,0)}
+    }
+
+
+
+    /* ─── MOBILE AREAS COVER FIX ─── */
+    @media (max-width: 700px) {
+      .areas-flex {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+      }
+
+      .area-pill {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+        padding: 0.85rem 1rem;
+      }
+    }
+
+    @media (min-width: 701px) and (max-width: 900px) {
+      .areas-flex {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.85rem;
+      }
+
+      .area-pill {
+        justify-content: center;
+      }
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 900px) {
+      .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .quick-contact-inner { grid-template-columns: 1fr; }
+      .quick-item { border-right: none; border-bottom: 1px solid rgba(0,0,0,0.1); }
+      .quick-item:last-child { border-bottom: none; }
+      .nav-links { display: none; }
+      .footer-inner { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      .form-row { grid-template-columns: 1fr; }
+      #leaflet-map { height: 320px; }
+      .map-overlay-badge { font-size: 0.72rem; padding: 0.5rem 1rem; }
+    }
+    @media (max-width: 480px) {
+      .whatsapp-btn { bottom: 20px; right: 18px; width: 54px; height: 54px; }
+      .whatsapp-btn:hover { width: 54px; border-radius: 50%; }
+      .whatsapp-label { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="site-header">
+<!-- TOPBAR -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <div class="topbar-left">
+      <div class="topbar-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Available 7 Days a Week
+      </div>
+      <div class="topbar-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Ipswich &amp; Suffolk
+      </div>
+      <div class="topbar-item">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+        No Call-Out Fee
+      </div>
+    </div>
+    <div class="topbar-right">
+      <a href="tel:01473875026" class="topbar-cta">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+        <span>Call 01473 875026</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.jpg" alt="DML Locksmiths Ipswich logo"/></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="blog.html">Blog</a>
+    </div>
+    <div class="nav-phone">
+      <span>Call Sean Now</span>
+      01473 875026
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="menuClose" aria-label="Close menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+  <div class="mobile-menu-links">
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html" class="active">Contact</a>
+    <a href="blog.html">Blog</a>
+  </div>
+  <div class="mobile-menu-cta">
+    <a href="tel:01473875026" class="mobile-call-btn"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg> Call 01473 875026</a>
+    <a href="https://wa.me/447591773419?text=Hi%20Sean%2C%20I%20found%20you%20on%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20your%20locksmith%20services.%20Could%20you%20help%20me%20please%3F" target="_blank" rel="noopener noreferrer" class="mobile-wa-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="20" height="20"><path fill="#fff" d="M4.9 43.3l2.7-9.7C5.6 30.7 4.5 27.4 4.5 24 4.5 13.2 13.2 4.5 24 4.5S43.5 13.2 43.5 24 34.8 43.5 24 43.5c-3.3 0-6.4-.9-9.1-2.4L4.9 43.3z"/><path fill="#25D366" d="M24 7.5C14.8 7.5 7.5 14.8 7.5 24c0 3.2.9 6.2 2.5 8.8L7.4 41l8.4-2.6c2.5 1.4 5.3 2.1 8.2 2.1 9.2 0 16.5-7.3 16.5-16.5S33.2 7.5 24 7.5z"/><path fill="#fff" d="M33.3 28.5c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2-.3.5-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-2.6-1.3-4.3-2.3-6-5.2-.5-.8.5-.7 1.3-2.4.1-.3.1-.5-.1-.7-.2-.2-1-2.5-1.4-3.4-.4-.9-.7-.8-1-.8h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 2.6 1.1 3.6 1.2 4.9 1 .8-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.1-.4-.2-.9-.4z"/></svg> WhatsApp Sean</a>
+  </div>
+</div>
+
+<!-- PAGE HERO -->
+<header class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <span style="color:var(--white);">Contact</span>
+    </div>
+    <h1>Get In <em class="gold">Touch</em></h1>
+    <p class="page-hero-lead">Whether it's an emergency, a planned job or just a quick question — Sean is happy to help. Call, WhatsApp or fill in the form below and he'll get back to you as soon as possible.</p>
+  </div>
+</header>
+
+<!-- QUICK CONTACT STRIP -->
+<div class="quick-contact">
+  <div class="quick-contact-inner">
+    <a href="tel:01473875026" class="quick-item">
+      <div class="quick-item-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+      </div>
+      <div class="quick-item-text">
+        <span>Call Sean Direct</span>
+        <strong>01473 875026</strong>
+      </div>
+    </a>
+    <a href="https://wa.me/447591773419?text=Hi%20Sean%2C%20I%20found%20you%20on%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20your%20locksmith%20services.%20Could%20you%20help%20me%20please%3F" target="_blank" rel="noopener noreferrer" class="quick-item">
+      <div class="quick-item-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <div class="quick-item-text">
+        <span>WhatsApp Message</span>
+        <strong>Chat with Sean</strong>
+      </div>
+    </a>
+    <div class="quick-item">
+      <div class="quick-item-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </div>
+      <div class="quick-item-text">
+        <span>Available</span>
+        <strong>7 Days a Week</strong>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTACT SECTION -->
+<section id="contact-main">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- LEFT: Info -->
+      <div class="contact-info reveal-left">
+        <span class="section-label">Contact DML Locksmiths</span>
+        <h2>How to <em class="gold">Reach Sean</em></h2>
+        <div class="gold-divider"></div>
+        <p>The quickest way to reach Sean is always a direct phone call — especially for emergencies. If it's not urgent, feel free to send a WhatsApp message or fill in the contact form and Sean will come back to you promptly.</p>
+
+        <div class="contact-cards">
+          <a href="tel:01473875026" class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+            </div>
+            <div class="contact-card-text">
+              <span>Phone — Best for Emergencies</span>
+              <strong>01473 875026</strong>
+              <p>Tap to call Sean directly</p>
+            </div>
+          </a>
+          <a href="https://wa.me/447591773419?text=Hi%20Sean%2C%20I%20found%20you%20on%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20your%20locksmith%20services.%20Could%20you%20help%20me%20please%3F" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <div class="contact-card-text">
+              <span>WhatsApp</span>
+              <strong>Send a Message</strong>
+              <p>Opens with a pre-written message ready to send</p>
+            </div>
+          </a>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-card-text">
+              <span>Location</span>
+              <strong>Ipswich, Suffolk</strong>
+              <p>Covering Ipswich and the surrounding Suffolk area</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-card-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="contact-card-text">
+              <span>Hours</span>
+              <strong>7 Days a Week</strong>
+              <p>Mon–Sun, 7am–10pm. Emergency calls welcome</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="emergency-note">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <div>
+            <h4>Locked Out? Call Don't Message</h4>
+            <p>For emergency lockouts please call <a href="tel:01473875026" style="color:var(--gold);">01473 875026</a> directly — this is the fastest way to get Sean to you. He aims to reach most Ipswich callouts within 30 minutes.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT: Form -->
+      <div class="contact-form-wrap reveal-right">
+        <form class="contact-form" id="contactForm" action="send-email.php" method="POST">
+          <input type="hidden" name="source_page" value="contact.html#contact-main"/>
+          <div class="form-header">
+            <h3>Send Sean a <em class="gold">Message</em></h3>
+            <p>Fill in the form below and Sean will get back to you as soon as possible.</p>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cf-name">Your Name *</label>
+              <input type="text" id="cf-name" name="name" placeholder="e.g. John Smith" required/>
+            </div>
+            <div class="form-group">
+              <label for="cf-phone">Phone Number *</label>
+              <input type="tel" id="cf-phone" name="phone" placeholder="e.g. 07700 000000" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cf-email">Email Address</label>
+            <input type="email" id="cf-email" name="email" placeholder="your@email.com"/>
+          </div>
+          <div class="form-group">
+            <label for="cf-service">What Do You Need?</label>
+            <select id="cf-service" name="service">
+              <option value="" disabled selected>Select a service…</option>
+              <option>Emergency Call Out</option>
+              <option>Lock Fitting</option>
+              <option>Lock Repair</option>
+              <option>Door/Window Adjustment</option>
+              <option>Key Cutting</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cf-location">Your Location</label>
+            <input type="text" id="cf-location" name="location" placeholder="e.g. Ipswich, Kesgrave, Felixstowe…"/>
+          </div>
+          <div class="form-group">
+            <label for="cf-message">Your Message</label>
+            <textarea id="cf-message" name="message" rows="4" placeholder="Tell Sean a bit more about what you need…"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="submit" class="btn btn-gold">
+              Send Message
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            </button>
+          </div>
+          <p class="form-note">For emergencies call <a href="tel:01473875026">01473 875026</a> directly — don't wait for a form reply.</p>
+        </form>
+        <div class="form-success" id="formSuccess" style="display:none;">
+          <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          <h3>Message Sent!</h3>
+          <p>Thanks for getting in touch. Sean will get back to you as soon as possible. For anything urgent, please call <a href="tel:01473875026" style="color:var(--gold);">01473 875026</a>.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map">
+  <div class="container">
+    <div class="map-header reveal">
+      <span class="section-label">Find Us</span>
+      <h2>Based in <em class="gold">Ipswich</em>, Suffolk</h2>
+      <p>Sean is local to Ipswich and covers the town and surrounding areas. Use the map to see where he's based.</p>
+    </div>
+  </div>
+  <div class="map-wrap">
+    <div id="leaflet-map"></div>
+    <div class="map-overlay-badge">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      DML Locksmiths — Ipswich, Suffolk
+    </div>
+  </div>
+</section>
+
+<!-- AREAS -->
+<section id="areas">
+  <div class="container">
+    <div class="areas-header reveal">
+      <span class="section-label">Coverage</span>
+      <h2>Areas <em class="gold">We Cover</em></h2>
+      <p>Not sure if Sean covers your area? Just give him a call on <a href="tel:01473875026" style="color:var(--gold);">01473 875026</a> and he'll confirm straight away.</p>
+    </div>
+    <div class="areas-flex">
+      <a href="locksmith-ipswich.html" class="area-pill reveal stagger-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Ipswich</a>
+      <a href="locksmith-felixstowe.html" class="area-pill reveal stagger-2"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Felixstowe</a>
+      <a href="locksmith-woodbridge.html" class="area-pill reveal stagger-3"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Woodbridge</a>
+      <a href="locksmith-stowmarket.html" class="area-pill reveal stagger-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Stowmarket</a>
+      <a href="locksmith-kesgrave.html" class="area-pill reveal stagger-2"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Kesgrave</a>
+      <a href="locksmith-martlesham.html" class="area-pill reveal stagger-3"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Martlesham</a>
+      <a href="locksmith-claydon.html" class="area-pill reveal stagger-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Claydon</a>
+      <a href="locksmith-bramford.html" class="area-pill reveal stagger-2"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Bramford</a>
+      <a href="locksmith-hadleigh.html" class="area-pill reveal stagger-3"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Hadleigh</a>
+      <a href="locksmith-needham-market.html" class="area-pill reveal stagger-1"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>Needham Market</a>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <div class="container" style="padding:0;">
+    <h2>Still Have a Question?</h2>
+    <p>Sean is always happy to have a quick chat. Give him a call and he'll answer any questions you have — no obligation whatsoever.</p>
+    <a href="tel:01473875026" class="cta-dark-btn">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.0 1.18 2 2 0 012 0h3a2 2 0 012 1.72c.12.96.36 1.9.71 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.35 1.85.59 2.81.71A2 2 0 0122 14z"/></svg>
+      Call 01473 875026
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <img src="logo.jpg" alt="DML Locksmiths Ipswich"/>
+      <p>Your trusted local locksmith in Ipswich and surrounding Suffolk areas. Vetted, insured and always professional.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="#emergency">Emergency Call Outs</a></li>
+        <li><a href="#fitting">Fitting New Locks</a></li>
+        <li><a href="#repairs">Repairing Locks</a></li>
+        <li><a href="#adjustments">Door/Window Adjustments</a></li>
+        <li><a href="#keycutting">Key Cutting</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Areas</h4>
+      <ul>
+        <li><a href="locksmith-ipswich.html">Ipswich</a></li>
+        <li><a href="locksmith-felixstowe.html">Felixstowe</a></li>
+        <li><a href="locksmith-woodbridge.html">Woodbridge</a></li>
+        <li><a href="locksmith-stowmarket.html">Stowmarket</a></li>
+        <li><a href="locksmith-kesgrave.html">Kesgrave</a></li>
+        <li><a href="locksmith-martlesham.html">Martlesham</a></li>
+        <li><a href="locksmith-claydon.html">Claydon</a></li>
+        <li><a href="locksmith-bramford.html">Bramford</a></li>
+        <li><a href="locksmith-hadleigh.html">Hadleigh</a></li>
+        <li><a href="locksmith-needham-market.html">Needham Market</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:01473875026">01473 875026</a></li>
+        <li>Ipswich, Suffolk</li>
+        <li>7 Days a Week</li>
+        <li style="margin-top:0.75rem;">
+          <img src="locksmithassociation.jpg" alt="UK Locksmiths Association" style="width:60px; border-radius:4px;"/>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 DML Locksmiths. All rights reserved.</span>
+    <span>Ipswich, Suffolk</span>
+  </div>
+  
+  <div style="text-align: center; margin-top: 1.5rem; font-size: 0.85rem; color: rgba(255,255,255,0.4);">
+  <a href="privacy-policy.html" style="color: #c9a227; text-decoration: none;">Privacy Policy</a>
+  <span style="margin: 0 0.6rem; color: rgba(255,255,255,0.3);">|</span>
+  <a href="terms-and-conditions.html" style="color: #c9a227; text-decoration: none;">Terms &amp; Conditions</a>
+</div>
+  
+</footer>
+
+<!-- WHATSAPP -->
+<a href="https://wa.me/447591773419?text=Hi%20Sean%2C%20I%20found%20you%20on%20your%20website%20and%20I%27d%20like%20to%20enquire%20about%20your%20locksmith%20services.%20Could%20you%20help%20me%20please%3F" target="_blank" rel="noopener noreferrer" class="whatsapp-btn" aria-label="Chat with Sean on WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="30" height="30">
+    <path fill="#fff" d="M4.9 43.3l2.7-9.7C5.6 30.7 4.5 27.4 4.5 24 4.5 13.2 13.2 4.5 24 4.5S43.5 13.2 43.5 24 34.8 43.5 24 43.5c-3.3 0-6.4-.9-9.1-2.4L4.9 43.3z"/>
+    <path fill="#25D366" d="M24 7.5C14.8 7.5 7.5 14.8 7.5 24c0 3.2.9 6.2 2.5 8.8L7.4 41l8.4-2.6c2.5 1.4 5.3 2.1 8.2 2.1 9.2 0 16.5-7.3 16.5-16.5S33.2 7.5 24 7.5z"/>
+    <path fill="#fff" d="M33.3 28.5c-.5-.2-2.8-1.4-3.2-1.5-.4-.2-.7-.2-1 .2-.3.5-1.2 1.5-1.4 1.8-.3.3-.5.3-1 .1-2.6-1.3-4.3-2.3-6-5.2-.5-.8.5-.7 1.3-2.4.1-.3.1-.5-.1-.7-.2-.2-1-2.5-1.4-3.4-.4-.9-.7-.8-1-.8h-.8c-.3 0-.7.1-1.1.5-.4.4-1.4 1.4-1.4 3.4s1.5 3.9 1.7 4.2c.2.3 2.9 4.4 7 6.2 2.6 1.1 3.6 1.2 4.9 1 .8-.1 2.4-1 2.7-1.9.3-.9.3-1.7.2-1.9-.1-.1-.4-.2-.9-.4z"/>
+  </svg>
+  <span class="whatsapp-label">Chat on WhatsApp</span>
+</a>
+
+<script>
+  // Scroll reveal
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+
+  // Leaflet map
+  const leafletScript = document.createElement('script');
+  leafletScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js';
+  leafletScript.onload = function() {
+    const map = L.map('leaflet-map', { zoomControl: true, scrollWheelZoom: false }).setView([52.0567, 1.1482], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      maxZoom: 19
+    }).addTo(map);
+
+    const goldIcon = L.divIcon({
+      className: '',
+      html: `<div style="
+        background: #c9a227;
+        width: 18px; height: 18px;
+        border-radius: 50% 50% 50% 0;
+        transform: rotate(-45deg);
+        border: 3px solid #0a0a0a;
+        box-shadow: 0 2px 12px rgba(201,162,39,0.6);
+      "></div>`,
+      iconSize: [18, 18],
+      iconAnchor: [9, 18],
+      popupAnchor: [0, -20]
+    });
+
+    L.marker([52.0567, 1.1482], { icon: goldIcon })
+      .addTo(map)
+      .bindPopup(`
+        <div style="font-family:'Oswald',sans-serif; text-align:center; padding:4px 8px;">
+          <strong style="font-size:1rem; letter-spacing:0.05em;">DML LOCKSMITHS</strong><br/>
+          <span style="font-size:0.8rem; color:#666;">Ipswich, Suffolk</span><br/>
+          <a href="tel:01473875026" style="color:#c9a227; font-size:0.85rem; font-weight:700;">01473 875026</a>
+        </div>
+      `, { maxWidth: 180 })
+      .openPopup();
+  };
+  document.body.appendChild(leafletScript);
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+</script>
+<script>
+  // Hamburger menu
+  var hamburger = document.getElementById('hamburger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var menuClose = document.getElementById('menuClose');
+  function openMenu() {
+    mobileMenu.classList.add('open');
+    hamburger.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  if (hamburger) hamburger.addEventListener('click', function(e) { e.stopPropagation(); openMenu(); });
+  if (menuClose) menuClose.addEventListener('click', closeMenu);
+  if (mobileMenu) mobileMenu.addEventListener('click', function(e) { if (e.target === mobileMenu) closeMenu(); });
+  document.querySelectorAll('.mobile-menu-links a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+</script>
+</body>
+</html>
